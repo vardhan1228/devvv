@@ -1,0 +1,2604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d1b">
+<title>AI Engineering Roadmap | What Is Inside AI Engineering</title>
+<style>
+:root{--bg:#080d1b;--surface:#101a2d;--surface2:#14213a;--line:#293b5b;--text:#f4f7ff;--muted:#b0bfd6;--cyan:#50ddeb;--violet:#b09aff;--green:#70e0b1;--gold:#ffd17a;--pink:#ff8db8;--blue:#83bdff;--orange:#ffac7b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:25px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.shell{width:min(1160px,calc(100% - 40px));margin:auto}
+.topline{height:4px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--green))}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.03em}.brandmark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#07111e;font-weight:950}.navlinks{display:flex;flex-wrap:wrap;gap:22px;color:var(--muted);font-size:.91rem}.navlinks a:hover{color:var(--cyan)}
+.hero{position:relative;overflow:hidden;padding:clamp(42px,8vw,96px) 0 68px;border-top:1px solid #1c2a44;background:radial-gradient(ellipse at 82% 25%,#1d2d50 0%,transparent 42%),radial-gradient(ellipse at 10% 70%,#112c3a 0%,transparent 35%)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:850;color:var(--cyan)}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
+h1{font-size:clamp(3rem,7vw,6.6rem);letter-spacing:-.075em;line-height:.98;margin:22px 0;max-width:900px}h1 .gradient{background:linear-gradient(95deg,var(--cyan),var(--violet) 55%,var(--green));color:transparent;background-clip:text}.hero-copy{max-width:760px;color:var(--muted);font-size:clamp(1.04rem,2vw,1.25rem)}.hero-points{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0}.chip{border:1px solid #344765;background:#101c31bd;border-radius:999px;padding:8px 13px;font-size:.86rem;color:#e0eaff}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:28px auto 76px}.metric{border:1px solid var(--line);background:linear-gradient(150deg,#14223b,#0e1729);border-radius:17px;padding:21px}.metric strong{display:block;font-size:2rem;letter-spacing:-.05em}.metric span{font-size:.88rem;color:var(--muted)}
+section.content{padding:30px 0 58px}.section-kicker{font-size:.76rem;text-transform:uppercase;letter-spacing:.15em;font-weight:850;color:var(--cyan)}h2{font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.055em;line-height:1.08;margin:10px 0 16px}.lead{max-width:780px;color:var(--muted);font-size:1.08rem}.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch;margin-top:28px}.feature-panel{border:1px solid var(--line);background:var(--surface);border-radius:22px;padding:clamp(22px,4vw,36px)}.feature-panel h3{font-size:1.25rem;margin:0 0 10px}.feature-panel p{color:var(--muted);margin:0}.definition{background:linear-gradient(145deg,#152845,#10182b);position:relative;overflow:hidden}.definition:after{content:"AI";position:absolute;right:12px;bottom:-65px;font-size:14rem;line-height:1;font-weight:950;letter-spacing:-.1em;color:#ffffff06;pointer-events:none}.definition>*{position:relative;z-index:1}.definition .big{font-size:clamp(1.35rem,2.5vw,2rem);font-weight:750;line-height:1.3;letter-spacing:-.035em}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:27px}.tile{border:1px solid var(--line);background:var(--surface);border-radius:18px;padding:23px}.tile .icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;font-size:1.15rem;font-weight:900;margin-bottom:17px;background:#1c2c49;color:var(--cyan)}.tile h3{margin:0 0 8px;font-size:1.1rem}.tile p{margin:0;color:var(--muted);font-size:.95rem}
+.jobstrip{margin-top:25px;padding:23px;border-radius:18px;border:1px solid #2c4b5d;background:linear-gradient(100deg,#102c38,#111b30);display:grid;grid-template-columns:1fr 1fr;gap:22px}.jobstrip h3{margin:0 0 8px}.jobstrip p{margin:0;color:var(--muted)}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,#2a3d5c,transparent);margin:12px 0 30px}
+.phase-intro{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.phase-intro .smallnote{color:var(--muted);font-size:.9rem;max-width:320px;text-align:right}
+.phase-list{display:grid;gap:17px}.phase{--accent:var(--cyan);border:1px solid var(--line);border-radius:20px;background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 6%,#101a2d),#0d1628 70%);overflow:hidden}.phasehead{padding:23px 25px;display:flex;align-items:center;gap:17px;border-bottom:1px solid #293b55}.phase-num{flex:0 0 49px;height:49px;border-radius:15px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);font-weight:950;font-size:1.1rem}.phasehead h3{margin:0;font-size:1.25rem;letter-spacing:-.025em}.phasehead p{margin:4px 0 0;color:var(--muted);font-size:.92rem}.phasecount{margin-left:auto;color:var(--accent);font-weight:800;font-size:.86rem;white-space:nowrap}
+.levelgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;padding:13px}.level{border:1px solid #263752;border-radius:15px;background:#0d1729;overflow:hidden}.level summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:16px}.level summary::-webkit-details-marker{display:none}.level summary:after{content:"＋";font-size:1.1rem;color:var(--muted);margin-left:auto}.level[open] summary:after{content:"−";color:var(--accent)}.level summary:hover{background:#ffffff05}.level-number{flex:0 0 39px;height:39px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent);font-weight:950;font-size:.85rem}.level-title{font-weight:800;line-height:1.3}.level-meta{display:block;font-size:.77rem;color:var(--muted);font-weight:500;margin-top:5px}.level-body{padding:0 18px 19px 68px;color:#dce5f5;font-size:.93rem}.level-body p{margin:0 0 12px}.level-body h4{margin:16px 0 6px;color:var(--accent);font-size:.74rem;letter-spacing:.13em;text-transform:uppercase}.skillset{display:flex;flex-wrap:wrap;gap:6px}.skill{border:1px solid #2c3e5b;border-radius:999px;padding:4px 8px;color:#c9d7ed;font-size:.76rem}
+.career{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:27px}.career .tile{position:relative}.career .tile:before{content:"";position:absolute;top:0;left:23px;right:23px;height:2px;background:var(--accent,var(--cyan))}
+.workflow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:26px}.step{position:relative;border:1px solid var(--line);border-radius:15px;background:var(--surface);padding:18px}.step b{display:block;color:var(--cyan);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}.step span{font-weight:750;font-size:.94rem}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--muted);font-size:.9rem}footer strong{color:var(--text)}.footerrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:850px){.intro-grid{grid-template-columns:1fr}.grid3,.career{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.levelgrid{grid-template-columns:1fr}.phase-intro{align-items:start;flex-direction:column}.phase-intro .smallnote{text-align:left}}
+@media(max-width:540px){.shell{width:min(100% - 28px,1160px)}nav{align-items:flex-start;flex-direction:column}.navlinks{gap:14px}.hero{padding:45px 0}.metrics{gap:9px}.metric{padding:15px}.metric strong{font-size:1.6rem}.grid3,.career{grid-template-columns:1fr}.workflow{grid-template-columns:1fr}.phasehead{padding:18px 15px;gap:12px}.phasecount{font-size:.75rem}.phase-num{flex-basis:40px;height:40px}.level-body{padding-left:18px}.level summary{padding:13px}.level-title{font-size:.92rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<style>/* ==========================================
+   🚀 HIDDEN ELEMENTS
+   ========================================== */
+[data-testid="accounts-profile-button"],
+[data-testid="conversation-options-button"],
+[aria-description="Share sheet"],
+#modal-account-payment,
+#modal-conversation-history-rate-limit,
+a[href*="/invite"],
+a[href="/apps"],
+a[href="/logout"],
+a[href="/admin"],
+a[href="/deep-research"],
+a[href*="/plugins"],
+a[href*="/maps"],
+a[href*="/gpts"],
+a[href*="/sites"],
+a[href*="/agents"],
+button[data-sidebar-destination*="plugins"],
+button[data-sidebar-destination*="maps"],
+button[data-sidebar-destination*="gpts"],
+button[data-sidebar-destination*="sites"],
+button[data-sidebar-destination*="agents"],
+div:has(> svg.lucide-user-plus) {
+  display: none !important;
+}
+
+/* ==========================================
+   🚀 COMPOSER MODE (CHAT | WORK) VISIBILITY CONTROLLER (Desktop & Mobile)
+   ========================================== */
+body:not(.tn-show-work-mode) div[role="group"][aria-label="Composer mode"],
+body:not(.tn-show-work-mode) .root-HUUPVC,
+body:not(.tn-show-work-mode) div[class*="root-HUUPVC"],
+body:not(.tn-show-work-mode) [class*="mode-toggle"],
+body:not(.tn-show-work-mode) [class*="mode-toggle-track"],
+body:not(.tn-show-work-mode) [class*="text-mode-toggle"],
+body:not(.tn-show-work-mode) header div:has(> * > [class*="mode-toggle"]),
+body:not(.tn-show-work-mode) header div:has(> [class*="mode-toggle"]),
+body:not(.tn-show-work-mode) [data-app-shell-header-obstacle="true"]:has([role="group"]) {
+  display: none !important;
+}
+
+#notice_share {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* Fix Send Button Arrow Rotation */
+[data-testid="send-button"] svg { 
+  transform: none !important; 
+}
+
+/* ==========================================
+   🚀 COMBINED SCROLL UNLOCK (Wheel & Touch Fix)
+   ========================================== */
+html, body, #__next, [data-scroll-locked] {
+  overflow: visible !important;
+  overflow-y: auto !important;
+  pointer-events: auto !important;
+  padding-right: 0 !important; 
+}
+
+.flex-1.overflow-hidden, 
+.react-scroll-to-bottom--css {
+  overflow-y: auto !important;
+  pointer-events: auto !important;
+}
+
+div[role="dialog"] ~ div[aria-hidden="true"][style*="position: fixed"] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================
+   🚀 HIDE USAGE LIMIT & PERCENTAGE REMAINING
+   ========================================== */
+section[role="status"]:has(progress),
+section[role="status"]:has([aria-label*="usage" i]),
+section[role="status"]:has([aria-label*="Usage" i]),
+aside[role="status"]:has(progress),
+div[role="status"]:has(progress) {
+  display: none !important;
+}
+
+/* ==========================================
+   🚀 HIDE ACCOUNT POPUP MENU & BLOCK POPUP
+   ========================================== */
+div[role="menu"]:has([data-testid="workspace-switcher-trigger"]),
+div[role="menu"]:has(a[href*="/settings"]),
+div[role="menu"]:has(a[href*="logout"]),
+div[data-radix-popper-content-wrapper]:has([data-testid="workspace-switcher-trigger"]),
+div[data-radix-popper-content-wrapper]:has(a[href*="/settings"]) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+
+button[aria-label="Open profile menu"] {
+  cursor: default !important;
+}
+
+/* ==========================================
+   🚀 EXPORT CHAT BUTTON & DROPDOWN UI
+   ========================================== */
+.tn-export-wrapper {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 6px !important;
+}
+
+.tn-export-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  height: 32px !important;
+  padding: 0 10px !important;
+  background-color: #10a37f !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  border-radius: 8px !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+  transition: all 0.15s ease !important;
+  white-space: nowrap !important;
+}
+
+.tn-export-btn:hover {
+  background-color: #0d8a6b !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18) !important;
+}
+
+.tn-export-dropdown {
+  position: fixed !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+  min-width: 210px !important;
+  padding: 6px 0 !important;
+  z-index: 999999 !important;
+}
+
+.dark .tn-export-dropdown {
+  background: #212121 !important;
+  border-color: #383838 !important;
+  color: #ececec !important;
+}
+
+.tn-export-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  padding: 8px 14px !important;
+  background: none !important;
+  border: none !important;
+  text-align: left !important;
+  font-size: 13px !important;
+  color: #374151 !important;
+  cursor: pointer !important;
+  transition: background 0.15s ease !important;
+}
+
+.dark .tn-export-item {
+  color: #ececec !important;
+}
+
+.tn-export-item:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.dark .tn-export-item:hover {
+  background-color: #2f2f2f !important;
+}
+
+.tn-export-item svg {
+  flex-shrink: 0 !important;
+  color: #10a37f !important;
+}
+/* ==========================================
+   🚀 12. ARCHIVED CHAT MESSAGE LIMIT BANNER
+   ========================================== */
+.tn-archived-banner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 768px !important;
+  margin: 12px auto !important;
+  padding: 14px 18px !important;
+  background: #fff8f6 !important;
+  border: 1px solid #fecaca !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.08) !important;
+  box-sizing: border-box !important;
+  animation: tnFadeIn 0.25s ease-out !important;
+}
+
+@media (prefers-color-scheme: dark), [data-theme="dark"], .dark {
+  .tn-archived-banner {
+    background: #201a1a !important;
+    border-color: #4c2222 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  }
+}
+
+.tn-banner-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex: 1 !important;
+}
+
+.tn-banner-icon {
+  flex-shrink: 0 !important;
+  color: #ef4444 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  border-radius: 50% !important;
+}
+
+.tn-banner-text-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.tn-banner-title {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #dc2626 !important;
+  letter-spacing: -0.1px !important;
+  line-height: 1.3 !important;
+}
+
+.dark .tn-banner-title {
+  color: #f87171 !important;
+}
+
+.tn-banner-desc {
+  font-size: 12px !important;
+  color: #4b5563 !important;
+  line-height: 1.4 !important;
+}
+
+.dark .tn-banner-desc {
+  color: #9ca3af !important;
+}
+
+.tn-banner-new-btn {
+  flex-shrink: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #10a37f !important;
+  color: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.tn-banner-new-btn:hover {
+  background: #0e8c6d !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(16, 163, 127, 0.3) !important;
+}
+</style></head>
+<body>
+<div class="topline"></div>
+<header class="shell">
+  <nav aria-label="Main navigation">
+    <a class="brand" href="#top"><span class="brandmark">AI</span><span>AI Engineering Roadmap</span></a>
+    <div class="navlinks"><a href="#inside">What is inside AI engineering?</a><a href="#roadmap">Complete Roadmap</a></div>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="shell">
+      <div class="eyebrow"><span class="dot"></span> A practical learning path · 2026</div>
+      <h1>The Complete<br><span class="gradient">AI Engineering Roadmap.</span></h1>
+      <p class="hero-copy">Explore the core skills inside AI engineering, then follow the step-by-step roadmap from software fundamentals to reliable, production-ready AI systems.</p>
+      <div class="hero-points"><span class="chip">LLM APIs</span><span class="chip">RAG & retrieval</span><span class="chip">AI agents</span><span class="chip">Evaluation & security</span><span class="chip">Production AI</span></div>
+    </div>
+  </section>
+  <div id="inside">
+<section class="content shell">
+    <div class="section-kicker">01 / What you will learn</div>
+    <h2>What is inside AI engineering?</h2>
+    <p class="lead">Modern application-focused AI engineering combines familiar software development with model integration, data access and production reliability.</p>
+    <div class="grid3">
+      <article class="tile"><div class="icon">01</div><h3>Software engineering</h3><p>Programming, Git, APIs, databases, testing, debugging, architecture and maintainable code.</p></article>
+      <article class="tile"><div class="icon" style="color:var(--violet)">02</div><h3>LLM foundations & APIs</h3><p>Model behavior, tokens, context windows, model choice, streaming, structured outputs and orchestration.</p></article>
+      <article class="tile"><div class="icon" style="color:var(--green)">03</div><h3>Prompt & context engineering</h3><p>Instructions, examples, context selection, memory, summarization and context-window management.</p></article>
+      <article class="tile"><div class="icon" style="color:var(--gold)">04</div><h3>Retrieval and RAG</h3><p>Ingestion, chunking, embeddings, vector and hybrid search, reranking, citations and grounding.</p></article>
+      <article class="tile"><div class="icon" style="color:var(--pink)">05</div><h3>Agents and tools</h3><p>Tool calling, workflows, state, memory, planning, checkpoints, MCP and controlled action-taking.</p></article>
+      <article class="tile"><div class="icon" style="color:var(--blue)">06</div><h3>Evaluation and trust</h3><p>Test datasets, quality metrics, regression tests, prompt-injection defense, privacy and access control.</p></article>
+      <article class="tile"><div class="icon" style="color:var(--orange)">07</div><h3>Production AI / LLMOps</h3><p>Deployment, versioning, observability, CI/CD, latency, cost, reliability, monitoring and rollback.</p></article>
+      <article class="tile"><div class="icon">08</div><h3>System design</h3><p>Choosing architecture and defending trade-offs across quality, latency, cost, reliability and user needs.</p></article>
+      <article class="tile"><div class="icon" style="color:var(--violet)">09</div><h3>Specializations</h3><p>Multimodal applications, fine-tuning, managed AI platforms and advanced model techniques when the task calls for them.</p></article>
+    </div>
+    <div class="jobstrip">
+      <div><h3>Is deep ML or deep learning required first?</h3><p>Not for every applied AI engineering role. You can start by building products with existing models. ML, deep learning and fine-tuning become more important for roles focused on model training, optimization, computer vision or research.</p></div>
+      <div><h3>Is AI engineering just prompt engineering?</h3><p>No. Prompts are one component. Real systems also need robust software, trusted data, evaluation, security, deployment and operational monitoring.</p></div>
+    </div>
+  </section>
+  </div>
+  <section class="content shell" id="roadmap">
+    <div class="section-divider"></div>
+    <div class="phase-intro">
+      <div><div class="section-kicker">02 / End-to-end learning path</div><h2>The complete AI engineering roadmap</h2><p class="lead">Open any level to explore its purpose, prerequisites, core topics and a practical build target.</p></div>
+      <div class="smallnote">Follow the sequence from foundations to production. Specialization levels come after the core application-engineering skills.</div>
+    </div>
+    <div class="phase-list" id="phaseList"></div>
+  </section>
+</main>
+<footer><div class="shell footerrow"><div><strong>AI Engineering Roadmap</strong><br>From fundamentals to dependable AI products.</div><div>Project-first learning</div></div></footer>
+<script>
+const phases=[
+{title:"Foundations",sub:"Software engineering · LLM 101 · APIs · Prompt engineering",color:"var(--cyan)",levels:[0,1,2,3]},
+{title:"Retrieval",sub:"Embeddings · vector search · retrieval-augmented generation",color:"var(--violet)",levels:[4]},
+{title:"Agentic",sub:"Agents · tools · state · context engineering",color:"var(--green)",levels:[5,6]},
+{title:"Evaluation & Trust",sub:"LLM evaluations · AI security",color:"var(--gold)",levels:[7,8]},
+{title:"Production",sub:"System design · LLMOps · managed platforms",color:"var(--pink)",levels:[9,10,11]},
+{title:"Frontier & Proof",sub:"Multimodal · fine-tuning · projects",color:"var(--blue)",levels:[12,13,14]},
+{title:"Interview",sub:"Scenario-based interviews · system design · trade-offs",color:"var(--orange)",levels:[15]}
+];
+const levels=[
+{n:0,name:"Software Engineering Fundamentals",desc:"Become comfortable building, debugging, and deploying real software before adding LLMs. This is the engineering foundation for everything that follows.",pre:"No prior level — start here.",skills:["Python","Git/GitHub","Terminal","Testing","HTTP/REST","SQL","Debugging","Deployment"],build:"Ship a no-AI REST service with database persistence, validation, tests, logging and a clear README.",outcome:"You can debug your own app and explain how a request moves through it."},
+{n:1,name:"LLM 101",desc:"Build a strong mental model of how LLMs work, why they behave the way they do, and how to choose and use the right model for a task.",pre:"Level 0 — Software Engineering Fundamentals.",skills:["Tokens","Context windows","Generation","Temperature","Hallucinations","Model selection","Latency","Cost"],build:"Run the same task on two models. Compare output quality, latency, cost and failure cases.",outcome:"You can justify a model choice for a concrete task rather than choosing by popularity."},
+{n:2,name:"Working with LLM APIs (Orchestration)",desc:"Turn individual LLM calls into reliable software workflows — messages, streaming, structured outputs, tools, multi-step orchestration, concurrency, failure handling and observability. RAG and agents come later.",pre:"Levels 0–1.",skills:["Messages","Streaming","Structured outputs","Tool calling","Orchestration","Concurrency","Retries","Timeouts","Observability"],build:"Build a streaming assistant that calls a real API, validates structured output, logs latency and handles provider failures.",outcome:"You can make a model call dependable inside a software workflow."},
+{n:3,name:"Prompt Engineering",desc:"Design instructions that make LLM behavior more reliable and predictable. Context engineering comes later.",pre:"Levels 0–2.",skills:["Instructions","Examples","Constraints","Schemas","Prompt testing","Edge cases"],build:"Optimize a real prompt against a small test set and scoring rubric.",outcome:"You can compare prompt versions systematically instead of choosing by intuition."},
+{n:4,name:"RAG",desc:"Build the retrieval layer RAG depends on — ingestion, chunking, embeddings, vector search and hybrid retrieval — then ground LLMs in external knowledge, improve retrieval quality and learn architectures beyond naive retrieve-and-generate.",pre:"Levels 0–3.",skills:["Ingestion","Chunking","Embeddings","Vector search","Hybrid retrieval","Reranking","Citations","Retrieval evaluation"],build:"Build a knowledge assistant that answers from documents, cites evidence, respects access rules and abstains when evidence is missing.",outcome:"You can evaluate retrieval quality separately from answer quality."},
+{n:5,name:"AI Agents",desc:"Build systems where models can decide what to do next, use tools, maintain state, recover from failures and collaborate with other agents. Topics include planning, tools, MCP, memory, multi-agent systems and LangGraph.",pre:"Level 4 — RAG and earlier foundations.",skills:["Planning","Tool use","MCP","State","Memory","Checkpoints","Recovery","LangGraph","Multi-agent"],build:"Build a bounded support agent that searches a knowledge base and an API, but requests approval before a consequential action.",outcome:"You can explain why an agent is appropriate and constrain its tools and actions."},
+{n:6,name:"Context Engineering",desc:"Manage the model’s limited context window deliberately — decide what enters, what stays, what gets compressed and what moves outside — and build the agent harness that applies these decisions across long-running work.",pre:"Levels 0–5, especially tool-using workflows.",skills:["Context windows","Context selection","Summarization","Compression","State","Long-running tasks","Provenance"],build:"Compare an agent that receives every tool result with one that selects and summarizes context. Measure task success, token use and latency.",outcome:"You can preserve important information while reducing irrelevant context."},
+{n:7,name:"LLM Evaluations",desc:"Design, execute and automate comprehensive evaluations for LLMs and AI applications to ensure quality, safety and reliability in production.",pre:"Levels 0–6.",skills:["Golden datasets","Task success","Faithfulness","Retrieval metrics","Grader calibration","Regression tests","Human review"],build:"Create a versioned evaluation set and run it against multiple prompt/model versions; report results and failure cases.",outcome:"You can demonstrate whether a change improved the system with repeatable evidence."},
+{n:8,name:"AI Security",desc:"Secure LLM, RAG and agent systems against model-specific attacks, unsafe actions, data leakage and regulatory risk.",pre:"Levels 0–7.",skills:["Prompt injection","Least privilege","Access control","Secret management","Data leakage","Red teaming","Audit trails"],build:"Red-team a RAG/agent app. Publish a threat model, test cases, mitigations and remaining risks.",outcome:"You can identify and test important AI-specific security risks."},
+{n:9,name:"AI System Design",desc:"Design a complete production AI application and defend every architectural choice across quality, latency, cost, reliability and user experience.",pre:"Levels 0–8.",skills:["Architecture","API","Database","Retrieval store","Caching","Queues","Reliability","Trade-offs"],build:"Design an authenticated policy assistant with permission-aware retrieval, citations, abstention, monitoring and fallback paths.",outcome:"You can explain architecture decisions and the trade-offs they create."},
+{n:10,name:"LLMOps: From Development to Production",desc:"Take the RAG application and agent into production — versioned, evaluated on every change, guarded, containerized, deployed and monitored — then keep improving once real users arrive.",pre:"Levels 0–9.",skills:["Versioning","CI/CD","Docker","Deployment","Monitoring","Tracing","Rollback","Model/prompt releases"],build:"Deploy the RAG app or agent with automated evaluation, CI, monitoring and rollback.",outcome:"You can maintain and improve an AI service after launch."},
+{n:11,name:"Managed AI Platforms",desc:"Ship an AI application on platforms teams actually buy — a cloud provider's managed platform, an open-weight hosting provider, or a router spanning several — and know which parts to hand over and which to keep.",pre:"Levels 0–10.",skills:["Managed platforms","Model hosting","Model routers","Quotas","Data residency","Pricing","Vendor lock-in"],build:"Deploy a small AI app through one managed platform and document the operational trade-offs.",outcome:"You can choose a hosting approach based on product requirements, not hype."},
+{n:12,name:"Multimodal 101: Beyond Text",desc:"Build a strong mental model of how models handle images, audio and video, why they fail differently from text models, and how to choose the right model when a task stops being text-only.",pre:"Levels 0–11; take this when multimodal features fit your goals.",skills:["Image inputs","Audio","Speech","Video frames","Timestamps","Modality limits","Privacy","Latency"],build:"Build an image-understanding or meeting-audio summarization demo with evidence and known limitations.",outcome:"You can select a suitable modality-aware pipeline and test its failure modes."},
+{n:13,name:"Fine-Tuning",desc:"Fine-tune a model only when prompting, retrieval and orchestration have measurably run out, and prove with evaluation numbers that the tune was worth its data, training and serving cost.",pre:"Levels 0–12; advanced specialization track.",skills:["Training data","Held-out evaluation","LoRA","Baseline comparison","Data leakage","Serving cost"],build:"Compare a fine-tuned model with a prompted baseline on the same held-out evaluation set and calculate the trade-off.",outcome:"You can justify whether fine-tuning is worth the added cost and complexity."},
+{n:14,name:"Projects",desc:"Proof, not concepts. Portfolio builds that compose earlier levels. Ship 3–5 public.",pre:"Levels 0–13, selecting relevant specializations.",skills:["Portfolio","Documentation","Architecture diagrams","Evaluation","Demo","Failure analysis","Public repositories"],build:"Publish 3–5 projects with setup instructions, architecture, real evaluation results, limitations and a demo.",outcome:"A reviewer can understand, run and assess your work."},
+{n:15,name:"GenAI / AI Engineer Interview Prep",desc:"Convert everything learned across the roadmap into interview performance. Focus on scenario-based questions, system design, debugging, trade-offs and defending real engineering decisions.",pre:"Levels 0–14; use your own projects as evidence.",skills:["Scenario interviews","Coding","Debugging","System design","RAG trade-offs","Security","Communication"],build:"Complete mock interviews: debug a failure, design an AI service, and defend decisions from your portfolio.",outcome:"You can explain what you built, why it works, where it fails and how you would improve it."}
+];
+const root=document.getElementById("phaseList");
+phases.forEach((phase,i)=>{
+ const section=document.createElement("section");section.className="phase";section.style.setProperty("--accent",phase.color);
+ const head=document.createElement("div");head.className="phasehead";
+ head.innerHTML=`<div class="phase-num">0${i+1}</div><div><h3>Phase ${i+1} · ${phase.title}</h3><p>${phase.sub}</p></div>`;
+ const grid=document.createElement("div");grid.className="levelgrid";
+ levels.filter(l=>phase.levels.includes(l.n)).forEach(l=>{
+   const details=document.createElement("details");details.className="level";
+   const summary=document.createElement("summary");
+   summary.innerHTML=`<span class="level-number">L${l.n}</span><span class="level-title">${l.name}</span>`;
+   const body=document.createElement("div");body.className="level-body";
+   body.innerHTML=`<p>${l.desc}</p><h4>Prerequisites</h4><p>${l.pre}</p><h4>Core topics</h4><div class="skillset">${l.skills.map(s=>`<span class="skill">${s}</span>`).join("")}</div><h4>Practical build</h4><p>${l.build}</p><h4>Move forward when…</h4><p>${l.outcome}</p>`;
+   details.append(summary,body);grid.appendChild(details);
+ });
+ section.append(head,grid);root.appendChild(section);
+});
+</script>
+<script>// ðŸš¨ ULTRA FAST SETTINGS & HASH GUARD (TARGETED TO PAGE & HASH ONLY)
+(function() {
+  function sanitizeCurrentUrl() {
+    const pathname = window.location.pathname;
+    const hash = window.location.hash;
+    if (hash.includes('settings') || pathname === '/settings' || pathname.startsWith('/settings/')) {
+      try {
+        history.replaceState(null, '', '/');
+        window.location.replace('/');
+      } catch(e) {
+        window.location.href = '/';
+      }
+      try {
+        fetch('/api/report-violation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: 'Blocked URL/Hash: ' + window.location.href })
+        }).catch(() => {});
+      } catch(e) {}
+      return true;
+    }
+    return false;
+  }
+
+  sanitizeCurrentUrl();
+
+  // Intercept history.pushState and history.replaceState to prevent UI routing to /settings/*
+  try {
+    const _origPush = history.pushState;
+    history.pushState = function(state, title, url) {
+      if (url) {
+        const u = String(url);
+        if (u === '/settings' || u.startsWith('/settings/') || u.includes('#settings')) {
+          try {
+            fetch('/api/report-violation', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ url: 'Blocked pushState: ' + u })
+            }).catch(() => {});
+          } catch(e) {}
+          return _origPush.apply(this, [state, title, '/']);
+        }
+      }
+      return _origPush.apply(this, arguments);
+    };
+
+    const _origReplace = history.replaceState;
+    history.replaceState = function(state, title, url) {
+      if (url) {
+        const u = String(url);
+        if (u === '/settings' || u.startsWith('/settings/') || u.includes('#settings')) {
+          try {
+            fetch('/api/report-violation', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ url: 'Blocked replaceState: ' + u })
+            }).catch(() => {});
+          } catch(e) {}
+          return _origReplace.apply(this, [state, title, '/']);
+        }
+      }
+      return _origReplace.apply(this, arguments);
+    };
+  } catch(e) {}
+
+  window.addEventListener('hashchange', function(e) {
+    if (sanitizeCurrentUrl()) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }
+  }, true);
+
+  window.addEventListener('popstate', function(e) {
+    sanitizeCurrentUrl();
+  }, true);
+
+  // Fast check specifically for settings page & settings modal without breaking textarea focus
+  setInterval(function() {
+    sanitizeCurrentUrl();
+    const dialogs = document.querySelectorAll('div[role="dialog"]');
+    dialogs.forEach(dialog => {
+      if (dialog.id === 'toolnest-credits-modal' ||
+          dialog.querySelector('[data-testid*="voice" i], [aria-label*="voice" i], [aria-label*="End voice" i], canvas') ||
+          (dialog.getAttribute('aria-label') || '').toLowerCase().includes('voice')) {
+        return;
+      }
+      const text = (dialog.innerText || dialog.textContent || '').toLowerCase();
+      if (text.includes("general settings") || text.includes("data controls") || text.includes("shared links") || text.includes("security settings")) {
+        dialog.style.setProperty("display", "none", "important");
+        dialog.remove();
+      }
+    });
+  }, 100);
+})();
+
+// ==========================================
+// ðŸš€ 1. INDEXED-DB & MEMORY NUKE
+// ==========================================
+(function() {
+    try {
+        for (let i = localStorage.length - 1; i >= 0; i--) {
+            const key = localStorage.key(i);
+            if (key && (key.includes('pinned-items') || key.includes('lastKnownPinnedSidebarItemsCount'))) {
+                localStorage.removeItem(key);
+            }
+        }
+    } catch(e) {}
+
+    async function nukeStorage() {
+        try {
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && (key.includes('limit') || key.includes('capacity') || key.includes('message_cap') || key.includes('429') || key.includes('401'))) {
+                    localStorage.removeItem(key);
+                }
+            }
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                if (key && (key.includes('limit') || key.includes('capacity') || key.includes('message_cap') || key.includes('429') || key.includes('401'))) {
+                    sessionStorage.removeItem(key);
+                }
+            }
+        } catch (e) {}
+    }
+    nukeStorage();
+    setInterval(nukeStorage, 5000);
+})();
+
+// ==========================================
+// ðŸš€ 2. FETCH & STREAM HIJACKER (WITH REFRESH BYPASS)
+// ==========================================
+(function() {
+    const originalFetch = window.fetch;
+    window.fetch = async function (...args) {
+        try {
+            const response = await originalFetch.apply(this, args);
+            const url = args[0] && typeof args[0] === 'string' ? args[0] : '';
+            
+            // ðŸš€ REFRESH BYPASS: If URL contains "refresh", let it pass normally to keep session alive.
+            if ((url.includes('/backend-api/sentinel/heartbeat') || url.includes('/ces/')) && !url.includes('refresh')) {
+                return new Response(JSON.stringify({}), { status: 200, statusText: 'OK', headers: response.headers });
+            }
+
+            if ((response.status === 401 || response.status === 403) && (url.includes('/payments/') || url.includes('/checkout'))) {
+                return new Promise(() => {}); 
+            }
+
+            if (response.status === 401 || response.status === 403 || response.status === 429) {
+                return response;
+            }
+
+            if (response.status === 429) {
+                return response;
+            }
+
+            const contentType = response.headers.get('content-type') || '';
+            if (contentType.includes('text/event-stream') || contentType.includes('application/json')) {
+                const isStream = contentType.includes('text/event-stream');
+                
+                if (!isStream) {
+                    const clone = response.clone();
+                    let text = await clone.text();
+                    let wasModified = false;
+                    if (text.includes('message_cap') || text.includes('limit') || text.includes('429')) {
+                        text = text.replace(/"message_cap":\s*[\d.]+/g, '"message_cap":99999');
+                        text = text.replace(/"message_cap":\s*null/g, '"message_cap":99999');
+                        text = text.replace(/"has_capacity_limit":\s*true/g, '"has_capacity_limit":false');
+                        wasModified = true;
+                    }
+                    if (wasModified) {
+                        return new Response(text, {
+                            status: response.status,
+                            statusText: response.statusText,
+                            headers: response.headers
+                        });
+                    }
+                    return response;
+                }
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                const encoder = new TextEncoder();
+                
+                const stream = new ReadableStream({
+                    async start(controller) {
+                        while (true) {
+                            const { done, value } = await reader.read();
+                            if (done) break;
+                            
+                            let chunk = decoder.decode(value, { stream: true });
+                            if (chunk.includes('message_cap') || chunk.includes('limit') || chunk.includes('429')) {
+                                chunk = chunk.replace(/"message_cap":\s*[\d.]+/g, '"message_cap":99999');
+                                chunk = chunk.replace(/"has_capacity_limit":\s*true/g, '"has_capacity_limit":false');
+                            }
+                            controller.enqueue(encoder.encode(chunk));
+                        }
+                        controller.close();
+                        reader.releaseLock();
+                    }
+                });
+
+                return new Response(stream, {
+                    headers: response.headers,
+                    status: response.status,
+                    statusText: response.statusText
+                });
+            }
+
+            return response;
+        } catch (error) {
+            return new Response(JSON.stringify({}), { status: 200, statusText: 'OK' });
+        }
+    };
+})();
+
+// ==========================================
+// 🚀 3. WEBSOCKET SHIELD
+// ==========================================
+(function() {
+    const OrigWebSocket = window.WebSocket;
+    window.WebSocket = function(url, protocols) {
+        const ws = new OrigWebSocket(url, protocols);
+        const origAddEventListener = ws.addEventListener.bind(ws);
+        ws.addEventListener = function(type, listener, options) {
+            if (type === 'message') {
+                const wrappedListener = function(event) {
+                    if (typeof event.data === 'string') {
+                        if (event.data.includes('message_cap') || event.data.includes('limit') || event.data.includes('429') || event.data.includes('401')) return;
+                    }
+                    listener.call(this, event);
+                };
+                return origAddEventListener(type, wrappedListener, options);
+            }
+            return origAddEventListener(type, listener, options);
+        };
+        return ws;
+    };
+    if (OrigWebSocket) {
+        window.WebSocket.prototype = OrigWebSocket.prototype;
+        window.WebSocket.CONNECTING = OrigWebSocket.CONNECTING;
+        window.WebSocket.OPEN = OrigWebSocket.OPEN;
+        window.WebSocket.CLOSING = OrigWebSocket.CLOSING;
+        window.WebSocket.CLOSED = OrigWebSocket.CLOSED;
+    }
+})();
+
+// ==========================================
+// 🚀 4. TITANIUM UNFREEZER & SETTINGS BLOCKER
+// ==========================================
+(function() {
+    setInterval(() => {
+        if (window.location.hash.includes('#settings')) {
+            const blockedHash = window.location.hash;
+            window.location.hash = ''; 
+            history.replaceState(null, null, " ");
+            
+            fetch('/api/report-violation', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: 'Frontend Locked Hash: ' + blockedHash })
+            }).catch(() => {});
+            
+            const closeBtns = document.querySelectorAll('button[aria-label="Close"], button[aria-label="Close dialog"]');
+            closeBtns.forEach(btn => btn.click());
+            
+            const dialogs = document.querySelectorAll('div[role="dialog"]');
+            dialogs.forEach(dialog => {
+                if (dialog.id === 'toolnest-credits-modal' ||
+                    dialog.querySelector('[data-testid*="voice" i], [aria-label*="voice" i], [aria-label*="End voice" i], canvas') ||
+                    (dialog.getAttribute('aria-label') || '').toLowerCase().includes('voice')) {
+                  return;
+                }
+                if (dialog.innerText.includes("Settings") || dialog.innerText.includes("Security") || dialog.innerText.includes("Data controls")) {
+                    dialog.style.display = "none";
+                }
+            });
+        }
+
+        const textarea = document.querySelector('#prompt-textarea');
+        const sendBtn = document.querySelector('[data-testid="send-button"]');
+        const tooltips = document.querySelectorAll('div[role="tooltip"]');
+        
+        tooltips.forEach(t => {
+            if(t.innerText && (t.innerText.toLowerCase().includes('limit') || t.innerText.toLowerCase().includes('unauthorized'))) {
+                t.style.display = 'none';
+            }
+        });
+
+        const dialogs = document.querySelectorAll('div[role="dialog"]');
+        dialogs.forEach(dialog => {
+            if (dialog.id === 'toolnest-credits-modal' ||
+                dialog.querySelector('[data-testid*="voice" i], [aria-label*="voice" i], [aria-label*="End voice" i], canvas') ||
+                (dialog.getAttribute('aria-label') || '').toLowerCase().includes('voice')) {
+              return;
+            }
+            const text = dialog.innerText || dialog.textContent || "";
+            const dId = dialog.id || "";
+            if (text.includes("Too many requests") || (text.includes("limit") && !text.toLowerCase().includes("voice")) || text.includes("session expired") || dId.includes("rate-limit")) {
+                dialog.style.setProperty("display", "none", "important");
+            }
+        });
+
+        if (textarea) {
+            textarea.disabled = false;
+            textarea.removeAttribute('disabled');
+            textarea.style.pointerEvents = 'auto';
+            if(textarea.placeholder && (textarea.placeholder.includes("limit") || textarea.placeholder.includes("Too many"))) {
+                textarea.placeholder = "Message ChatGPT...";
+            }
+        }
+        
+        if (sendBtn) {
+            sendBtn.disabled = false;
+            sendBtn.removeAttribute('disabled');
+            sendBtn.style.pointerEvents = 'auto';
+            sendBtn.classList.remove('cursor-not-allowed', 'opacity-50');
+        }
+    }, 250); 
+})();
+
+// ==========================================
+// ðŸš€ 5. COOKIE KILLER & DOM CLEANER
+// ==========================================
+(function () {
+  function killMonsterCookies() {
+    const domain = location.hostname;
+    const rootDomain = "." + domain.split('.').slice(-2).join('.'); 
+    document.cookie.split(";").forEach(c => {
+      let cookieName = c.trim().split("=")[0];
+      if (cookieName.startsWith("ajs_") || cookieName.startsWith("_dd_s") || cookieName.startsWith("intercom")) {
+        document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + domain + ";";
+        document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + rootDomain + ";";
+      }
+    });
+  }
+  killMonsterCookies();
+  setInterval(killMonsterCookies, 2000);
+})();
+
+document.body.addEventListener("click", function (event) {
+  const link = event.target.closest("a");
+  if (!link) return;
+  const href = link.getAttribute("href");
+  if (!href) return;
+  const match = href.match(/^\/c\/([^\/]+)\/share\/([^\/]+)$/);
+  if (match) {
+    if (event.target.closest("button")) return;
+    event.preventDefault();
+    window.location.href = `/share/${match[2]}?c=${match[1]}`;
+  }
+});
+
+(function () {
+  "use strict";
+  function preventScrollLock(target) {
+      const originalAddEventListener = target.addEventListener;
+      target.addEventListener = function(type, listener, options) {
+          if (type === 'wheel' || type === 'touchmove') return; 
+          return originalAddEventListener.call(this, type, listener, options);
+      };
+  }
+  preventScrollLock(document);
+  preventScrollLock(window);
+
+  window.addEventListener("hashchange", function (event) {
+      if (window.location.hash === "#settings" || window.location.hash === "#pricing") {
+        event.stopImmediatePropagation();
+        event.preventDefault();
+        history.replaceState(null, null, " ");
+      }
+    }, true
+  );
+
+  const filterRules = [
+    { type: "selectorOnly", selector: '[data-testid="accounts-profile-button"]' },
+    { type: "selectorOnly", selector: '[data-testid="conversation-options-button"]' },
+    { type: "selectorOnly", selector: "#modal-account-payment" },
+    { type: "selectorOnly", selector: ".data-prompt-textarea-header aside" },
+    { type: "selectorOnly", selector: 'a[href="/library"]' },
+    { type: "selectorOnly", selector: 'a[href="/admin"]' },
+    { type: "selectorOnly", selector: 'a[href="/apps"]' },
+    { type: "selectorOnly", selector: 'a[href="/c/mustbe_hidden_pin"]' },
+    { type: "selectorOnly", selector: 'a[href="/deep-research"]' },
+    { type: "textOnly", text: "Report conversation" },
+    { type: "textOnly", text: "This is a copy of a shared ChatGPT conversation" },
+    { type: "textOnly", text: "Messages beyond this point are only visible to you" },
+    { type: "textOnly", text: "Archive" },
+    { type: "textOnly", text: "Start a group chat" },
+    { type: "xpath", query: "//button[contains(., 'Invite team members')]" }
+  ];
+
+  function cleanDOM() {
+    document.body.removeAttribute('data-scroll-locked');
+    document.documentElement.removeAttribute('data-scroll-locked');
+    
+    const nextRoot = document.getElementById('__next');
+    if (nextRoot) {
+        nextRoot.removeAttribute('aria-hidden');
+    }
+
+    document.head.querySelectorAll('style[data-radix-scroll-prevent-default]').forEach(el => {
+        el.remove();
+    });
+
+    document.querySelectorAll('div[aria-hidden="true"][style*="position: fixed"]').forEach(el => {
+        if (el.style.backgroundColor || el.style.backdropFilter || el.style.opacity) {
+            el.remove();
+        }
+    });
+
+    document.querySelectorAll('[aria-description="Share sheet"]').forEach((el) => {
+        if (el.parentElement) el.parentElement.style.setProperty('display', 'none', 'important');
+    });
+
+    document.querySelectorAll('[href="/cdn/assets/sprites-core-9c5054d5.svg#f7f872"]').forEach((el) => {
+        if (el.parentElement) el.parentElement.parentElement.parentElement.remove();
+    });
+
+    document.querySelectorAll('[href="/cdn/assets/sprites-core-9c5054d5.svg#61ee0c"]').forEach((el) => {
+        if (el.parentElement) el.parentElement.parentElement.parentElement.parentElement.remove();
+    });
+      
+    document.querySelectorAll('[href="/cdn/assets/sprites-core-9c5054d5.svg#427dd9"]').forEach((el) => {
+        if (el.parentElement) el.parentElement.parentElement.remove();
+    });
+
+    const dynamicModal = document.querySelector('#settings, #pricing, [id*="pricing"], [class*="modal-pricing"], [id*="settings"], [class*="modal-settings"]');
+    if (dynamicModal) {
+      dynamicModal.style.setProperty("display", "none", "important");
+    }
+
+    filterRules.forEach((rule) => {
+      if (rule.type === "selectorOnly") {
+        const elements = document.querySelectorAll(rule.selector);
+        elements.forEach((element) => { if(element) element.style.setProperty('display', 'none', 'important'); });
+      } else if (rule.type === "textOnly") {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+        let textNode;
+        const nodesToHide = [];
+        while ((textNode = walker.nextNode())) {
+          if (textNode.nodeValue.trim() === rule.text) {
+            const parent = textNode.parentElement;
+            if (parent && parent.children.length === 0) nodesToHide.push(parent);
+          }
+        }
+        nodesToHide.forEach((node) => { if(node) node.style.setProperty('display', 'none', 'important'); });
+      } else if (rule.type === "xpath") {
+        const snapshot = document.evaluate(rule.query, document, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+        for (let i = 0; i < snapshot.snapshotLength; i++) {
+          const node = snapshot.snapshotItem(i);
+          if (node) node.style.setProperty('display', 'none', 'important');
+        }
+      }
+    });
+  }
+
+  let isCleaning = false;
+  const observer = new MutationObserver((mutationsList) => {
+    if (isCleaning) return;
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'attributes') {
+          if (mutation.attributeName === 'data-scroll-locked' && mutation.target === document.body) document.body.removeAttribute('data-scroll-locked');
+          if (mutation.attributeName === 'aria-hidden' && mutation.target.id === '__next') mutation.target.removeAttribute('aria-hidden');
+      }
+      if (mutation.addedNodes.length > 0) {
+        mutation.addedNodes.forEach(node => {
+            if (node.tagName === 'STYLE' && node.hasAttribute('data-radix-scroll-prevent-default')) {
+                node.remove();
+            }
+        });
+
+        isCleaning = true;
+        cleanDOM();
+        isCleaning = false;
+        break;
+      }
+    }
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class', 'data-scroll-locked', 'aria-hidden'] });
+  cleanDOM();
+})();
+
+// ==========================================
+// ðŸš€ 6. ANTI-AUTO-RELOAD GUARD & CHUNK ERROR SUPPRESSOR
+// ==========================================
+(function() {
+    try {
+        const originalReload = Location.prototype.reload;
+        let isUserAction = false;
+        ['click', 'keydown', 'touchstart'].forEach(type => {
+            window.addEventListener(type, () => {
+                isUserAction = true;
+                setTimeout(() => { isUserAction = false; }, 400);
+            }, { capture: true, passive: true });
+        });
+
+        Location.prototype.reload = function() {
+            if (isUserAction) {
+                return originalReload.call(this);
+            }
+            console.warn("ðŸ›‘ [BLOCKED] Prevented unexpected background auto-reload via Location.reload.");
+        };
+
+        window.addEventListener('error', function(e) {
+            const msg = (e.message || '') + (e.error?.message || '');
+            if (msg.includes('dynamically imported module') || msg.includes('Error loading route module') || msg.includes('library-')) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                console.warn('ðŸ›‘ [BLOCKED] Suppressed dynamic module load failure:', msg);
+                return true;
+            }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+            const msg = (e.reason?.message || '') + (typeof e.reason === 'string' ? e.reason : '');
+            if (msg.includes('dynamically imported module') || msg.includes('Error loading route module') || msg.includes('library-')) {
+                e.preventDefault();
+                console.warn('ðŸ›‘ [BLOCKED] Suppressed dynamic module rejection:', msg);
+            }
+        });
+    } catch(e) {}
+})();
+
+// ==========================================
+// ðŸš€ 7. MODEL & REASONING EFFORT CONTROLS
+// ==========================================
+// Auto-switch disabled so users can freely open model and thinking effort slider popups.
+
+// ==========================================
+// ðŸš€ 8. SIDEBAR TITLE RECOVERY & CACHE HEALER
+// ==========================================
+(function() {
+    try {
+        for (let i = localStorage.length - 1; i >= 0; i--) {
+            const key = localStorage.key(i);
+            if (key && (key.includes('conversation-history') || key.includes('recent-conversations') || key.includes('chat-history') || key.includes('react-router'))) {
+                localStorage.removeItem(key);
+            }
+        }
+    } catch(e) {}
+})();
+
+// ==========================================
+// ðŸš€ 9. DIRECT IMAGE DOWNLOAD SYSTEM
+// ==========================================
+(function() {
+    async function downloadBlob(url, filename) {
+        try {
+            const res = await fetch(url);
+            const blob = await res.blob();
+            const blobUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = filename || 'chatgpt-image.png';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(blobUrl), 2000);
+        } catch(err) {
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename || 'chatgpt-image.png';
+            a.target = '_blank';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        }
+    }
+
+    function findImageNearButton(btn) {
+        const overlayParent = btn.closest('.group\\/imagegen-image, [id^="image-"]');
+        if (overlayParent) {
+            const img = overlayParent.querySelector('img[src*="/backend-api/estuary/content"], img[src*="file_"], img');
+            if (img && img.src) return img;
+        }
+
+        const turnParent = btn.closest('[data-testid^="conversation-turn-"], article, .relative.pb-2, .pb-2');
+        if (turnParent) {
+            const img = turnParent.querySelector('img[src*="/backend-api/estuary/content"], img[src*="file_"], .group\\/imagegen-image img');
+            if (img && img.src) return img;
+        }
+
+        let el = btn.parentElement;
+        while (el && el !== document.body) {
+            const img = el.querySelector('img[src*="/backend-api/estuary/content"], img[src*="file_"]');
+            if (img && img.src) return img;
+            el = el.parentElement;
+        }
+        return null;
+    }
+
+    document.addEventListener('click', function(e) {
+        const shareImgBtn = e.target.closest('button[aria-label="Share this image"], button[aria-label="Download this image"], button[aria-label="Download image"]');
+        const actionShareBtn = e.target.closest('button[aria-label="Share"], button[aria-label="Download"]');
+
+        let targetBtn = shareImgBtn;
+        if (!targetBtn && actionShareBtn) {
+            const turn = actionShareBtn.closest('[data-testid^="conversation-turn-"], article, .pb-2, .relative');
+            if (turn && turn.querySelector('.group\\/imagegen-image, img[src*="/backend-api/estuary/content"], img[src*="file_"]')) {
+                targetBtn = actionShareBtn;
+            }
+        }
+
+        if (targetBtn) {
+            const img = findImageNearButton(targetBtn);
+            if (img && img.src) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+
+                let filename = "chatgpt-image.png";
+                const altText = (img.alt || "").replace(/^Generated image:\s*/i, "").trim();
+                if (altText) {
+                    filename = altText.replace(/[^a-zA-Z0-9_\-\s]/g, "").trim().slice(0, 40) + ".png";
+                }
+
+                downloadBlob(img.src, filename);
+                return false;
+            }
+        }
+    }, true);
+
+    const downloadSvgIcon = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+        <path d="M16 13v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3"></path>
+        <polyline points="7 9 10 12 13 9"></polyline>
+        <line x1="10" y1="2" x2="10" y2="12"></line>
+      </svg>
+    `;
+
+    function updateDownloadButtons() {
+        document.querySelectorAll('button[aria-label="Share this image"]').forEach(btn => {
+            btn.setAttribute('aria-label', 'Download image');
+            btn.setAttribute('title', 'Download image');
+            const iconSpan = btn.querySelector('span') || btn;
+            iconSpan.innerHTML = downloadSvgIcon;
+        });
+
+        document.querySelectorAll('[aria-label="Response actions"]').forEach(actionBar => {
+            const turn = actionBar.closest('[data-testid^="conversation-turn-"], article, .pb-2, .relative');
+            if (turn && turn.querySelector('.group\\/imagegen-image, img[src*="/backend-api/estuary/content"], img[src*="file_"]')) {
+                const shareBtn = actionBar.querySelector('button[aria-label="Share"]');
+                if (shareBtn) {
+                    shareBtn.setAttribute('aria-label', 'Download');
+                    shareBtn.setAttribute('title', 'Download image');
+                    const iconDiv = shareBtn.querySelector('div.icon') || shareBtn.querySelector('span');
+                    if (iconDiv) {
+                        iconDiv.innerHTML = downloadSvgIcon;
+                    }
+                }
+            }
+        });
+    }
+
+    setInterval(updateDownloadButtons, 500);
+})();
+
+// ==========================================
+// ðŸ“¢ RESPONSIVE POPUP NOTICE & EXPIRY ALERT (WITH FREQUENCY & TARGET ROLES)
+// ==========================================
+(function() {
+  if (window.__exclusiveNoticeLoaded) return;
+  window.__exclusiveNoticeLoaded = true;
+  
+  async function checkUserNotice() {
+    try {
+      const res = await fetch('/api/user-notice');
+      if (!res.ok) return;
+      const data = await res.json();
+      if (!data || !data.notice) return;
+      
+      const notice = data.notice;
+      const freq = typeof notice.display_frequency === 'number' ? notice.display_frequency : 0;
+      
+      // Date string in YYYY-MM-DD for daily frequency check
+      const todayStr = new Date().toISOString().split('T')[0];
+      const freqKey = 'notice_views_' + notice.id + '_' + todayStr;
+
+      // Frequency logic:
+      // freq === 0 -> Every refresh (always show on reload)
+      // freq > 0   -> Limited to 'freq' times per day
+      if (freq > 0) {
+        const viewsToday = parseInt(localStorage.getItem(freqKey) || '0', 10);
+        if (viewsToday >= freq) {
+          return; // Daily frequency limit reached for this notice!
+        }
+      }
+
+      // Avoid double popup if already in DOM
+      if (document.getElementById('exclusiveNoticeOverlay')) return;
+
+      const overlay = document.createElement('div');
+      overlay.id = 'exclusiveNoticeOverlay';
+      overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:99999999;display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;animation:exclusiveFadeIn 0.25s ease-out;';
+
+      const typeBorder = notice.notice_type === 'danger' ? '#ef4444' : notice.notice_type === 'info' ? '#3b82f6' : '#f59e0b';
+      const typeBadge = notice.notice_type === 'danger' 
+        ? '<span style="background:#fee2e2;color:#991b1b;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:800;letter-spacing:0.5px;">ALERT</span>' 
+        : notice.notice_type === 'info' 
+        ? '<span style="background:#dbeafe;color:#1e40af;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:800;letter-spacing:0.5px;">INFO</span>' 
+        : '<span style="background:#fef3c7;color:#92400e;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:800;letter-spacing:0.5px;">REMINDER</span>';
+
+      const card = document.createElement('div');
+      card.style.cssText = 'position:relative;background:#ffffff;color:#1f2937;border-radius:18px;box-shadow:0 25px 50px -12px rgba(0,0,0,0.35);width:100%;max-width:500px;max-height:85vh;overflow-y:auto;padding:24px;border-top:5px solid ' + typeBorder + ';box-sizing:border-box;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;animation:exclusiveSlideUp 0.25s ease-out;';
+
+      card.innerHTML = [
+        '<button id="exclusiveCloseNoticeBtn" style="position:absolute;top:14px;right:14px;background:#f3f4f6;border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#4b5563;font-size:18px;font-weight:bold;transition:all 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.1);" title="Close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"></line><line x1="1" y1="13" x2="13" y2="1"></line></svg></button>',
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;padding-right:36px;">',
+          typeBadge,
+          '<h3 style="margin:0;font-size:18px;font-weight:800;color:#111827;line-height:1.3;">' + (notice.title || 'Notice') + '</h3>',
+        '</div>',
+        '<div style="font-size:14.5px;line-height:1.6;color:#374151;margin-bottom:20px;word-break:break-word;" class="notice-content-body">',
+          notice.content_html,
+        '</div>',
+        '<div style="display:flex;justify-content:flex-end;gap:10px;border-top:1px solid #f3f4f6;padding-top:14px;">',
+          '<button id="exclusiveDismissNoticeBtn" style="background:#2563eb;color:#ffffff;border:none;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 2px 6px rgba(37,99,235,0.25);transition:all 0.2s;">OK, Got it!</button>',
+        '</div>',
+        '<style>',
+          '@keyframes exclusiveFadeIn { from { opacity: 0; } to { opacity: 1; } }',
+          '@keyframes exclusiveSlideUp { from { transform: scale(0.95) translateY(10px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }',
+          '#exclusiveCloseNoticeBtn:hover { background: #e5e7eb; color: #111827; transform: rotate(90deg); }',
+          '#exclusiveDismissNoticeBtn:hover { background: #1d4ed8; }',
+          '.notice-content-body a { color: #2563eb; text-decoration: underline; font-weight: 600; }',
+          '.notice-content-body img { max-width: 100%; height: auto; border-radius: 8px; }',
+        '</style>'
+      ].join('');
+
+      overlay.appendChild(card);
+      document.body.appendChild(overlay);
+
+      // Increment view count if freq > 0
+      if (freq > 0) {
+        const cur = parseInt(localStorage.getItem(freqKey) || '0', 10);
+        localStorage.setItem(freqKey, String(cur + 1));
+      }
+
+      function dismiss() {
+        overlay.style.transition = 'opacity 0.2s';
+        overlay.style.opacity = '0';
+        setTimeout(function() { overlay.remove(); }, 200);
+      }
+
+      card.querySelector('#exclusiveCloseNoticeBtn').onclick = dismiss;
+      card.querySelector('#exclusiveDismissNoticeBtn').onclick = dismiss;
+      overlay.onclick = function(e) {
+        if (e.target === overlay) dismiss();
+      };
+    } catch(e) {}
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(checkUserNotice, 1200);
+  } else {
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(checkUserNotice, 1200); });
+  }
+})();
+
+
+// ==========================================
+// ==========================================
+// ðŸš€ CUSTOMER ACCOUNT IDENTITY & HIDE POPUP / REMAINING
+// ==========================================
+(function() {
+  function getCookie(name) {
+    try {
+      const match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    } catch(e) { return null; }
+  }
+
+  function getEmailFromToken() {
+    try {
+      const token = getCookie('access_token');
+      if (!token) return '';
+      const parts = token.split('.');
+      if (parts.length < 2) return '';
+      const payload = JSON.parse(atob(parts[1]));
+      const u = payload.username || '';
+      if (!u) return '';
+      return u.includes('@') ? u : u + '@gmail.com';
+    } catch(e) {
+      return '';
+    }
+  }
+
+  window.customerEmail = getEmailFromToken() || '';
+
+  async function getCustomerInfo() {
+    try {
+      const res = await fetch('/api/user-info', { credentials: 'include' });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && (data.email || data.username)) {
+          window.customerEmail = data.email || (data.username.includes('@') ? data.username : data.username + '@gmail.com');
+          applyCustomAccountUI();
+        }
+      }
+    } catch(e) {}
+  }
+  getCustomerInfo();
+
+  // 1. Completely block opening profile menu when clicking/tapping/pressing key on account button
+  ['click', 'mousedown', 'pointerdown', 'touchstart', 'keydown'].forEach(function(eventType) {
+    document.addEventListener(eventType, function(e) {
+      var btn = e.target.closest('button[aria-label="Open profile menu"], [data-testid="accounts-profile-button"]');
+      if (btn) {
+        if (eventType === 'keydown' && e.key !== 'Enter' && e.key !== ' ') return;
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        return false;
+      }
+    }, true);
+  });
+
+  function applyCustomAccountUI() {
+    var email = window.customerEmail || getEmailFromToken();
+    if (!email) return;
+    var initial = email.charAt(0).toUpperCase();
+
+    // 2. Hide 19% usage remaining & workspace hit limit banners
+    document.querySelectorAll('section[role="status"], aside[role="status"]').forEach(function(el) {
+      var txt = (el.textContent || '').toLowerCase();
+      if (el.querySelector('progress') || txt.includes('usage remaining') || txt.includes('remaining') || txt.includes('hit a limit')) {
+        el.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    // 3. Immediately hide and suppress any profile menu / popper dropdown (strictly target profile/workspace)
+    document.querySelectorAll('div[role="menu"], [data-radix-menu-content], [data-radix-popper-content-wrapper]').forEach(function(menu) {
+      // Do NOT hide model picker, thinking effort, export dropdown, or sliders
+      if (menu.classList.contains('tn-export-dropdown') ||
+          menu.querySelector('[role="slider"]') ||
+          menu.querySelector('[data-testid*="model"]') ||
+          menu.querySelector('[data-testid*="thinking"]') ||
+          menu.textContent.includes('Thinking effort') ||
+          menu.textContent.includes('Reasoning') ||
+          menu.textContent.includes('GPT-4') ||
+          menu.textContent.includes('GPT-5')) {
+        return;
+      }
+      if (menu.querySelector('[data-testid="workspace-switcher-trigger"], a[href*="/settings"], a[href*="logout"]') || 
+          menu.textContent.includes('Switch workspace') || 
+          (menu.textContent.includes('Log out') && !menu.textContent.includes('GPT'))) {
+        menu.style.setProperty('display', 'none', 'important');
+        menu.style.setProperty('visibility', 'hidden', 'important');
+        menu.style.setProperty('pointer-events', 'none', 'important');
+      }
+    });
+
+    // 4. Update the bottom sidebar profile buttons (both expanded and compact)
+    document.querySelectorAll('button[aria-label="Open profile menu"]').forEach(function(btn) {
+      btn.style.cursor = 'default';
+      if (btn.getAttribute('aria-haspopup')) {
+        btn.removeAttribute('aria-haspopup');
+      }
+
+      // Avatar Initial
+      var avatarBadge = btn.querySelector('span.rounded-full');
+      if (avatarBadge && avatarBadge.textContent !== initial) {
+        avatarBadge.textContent = initial;
+      }
+
+      // Customer Email (replaces "Tool Nest pp's Workspace 2" or "user@gmail.com")
+      var nameSpan = btn.querySelector('.text-start span.truncate:not(.text-secondary)') || 
+                     btn.querySelector('span.min-w-0.flex-1.truncate');
+      if (nameSpan && nameSpan.textContent !== email) {
+        nameSpan.textContent = email;
+        nameSpan.title = email;
+      }
+
+      // Plan (replaces "Business" with "Personal Space")
+      var planSpan = btn.querySelector('span.text-secondary') || 
+                     btn.querySelector('span.truncate.text-xs');
+      if (planSpan && planSpan.textContent !== 'Personal space (Enterprise Plan)') {
+        planSpan.textContent = 'Personal space (Enterprise Plan)';
+        planSpan.title = 'Personal space (Enterprise Plan)';
+      }
+    });
+
+    // 5. Fallback for any sidebar text containing Tool Nest or Workspace
+    document.querySelectorAll('#app-shell-sidebar span, nav span').forEach(function(s) {
+      if (s.children.length === 0) {
+        var txt = s.textContent.trim();
+        if (txt.includes('Tool Nest') || txt.includes('Workspace')) {
+          s.textContent = email;
+          s.title = email;
+        }
+        if (txt === 'Business' || txt === 'Personal Space' || txt === 'Personal space' || txt === 'Personal') {
+          s.textContent = 'Personal space (Enterprise Plan)';
+          s.title = 'Personal space (Enterprise Plan)';
+        }
+      }
+    });
+
+    // 6. Also update workspace trigger inside dropdown if it was ever rendered
+    var wsTrigger = document.querySelector('[data-testid="workspace-switcher-trigger"]');
+    if (wsTrigger) {
+      var dName = wsTrigger.querySelector('span.truncate:not(.text-tertiary)');
+      var dPlan = wsTrigger.querySelector('span.text-tertiary');
+      if (dName && dName.textContent !== email) dName.textContent = email;
+      if (dPlan && dPlan.textContent !== 'Personal space (Enterprise Plan)') { dPlan.textContent = 'Personal space (Enterprise Plan)'; dPlan.title = 'Personal space (Enterprise Plan)'; }
+    }
+  }
+
+  setInterval(applyCustomAccountUI, 80);
+})();
+
+// ==========================================
+// ðŸš€ REAL-TIME SIDEBAR CHAT DEDUPLICATION (SAFE - NO NODE REMOVAL)
+// ==========================================
+(function() {
+  function deduplicateSidebarChats() {
+    const seenIds = new Set();
+    const items = document.querySelectorAll('div[role="listitem"][data-sidebar-chatgpt-conversation-key], nav div[role="listitem"]');
+    
+    items.forEach(function(item) {
+      // ðŸ›‘ NEVER touch or hide project containers or chats inside projects!
+      const isProjectChat = item.closest('[aria-label*="Chats in"]') || 
+                            item.querySelector('[aria-label*="Chats in"]') ||
+                            item.hasAttribute('data-sidebar-project-container-id');
+      const link = item.querySelector('a[href*="/c/"]');
+      const href = link ? link.getAttribute('href') : null;
+      
+      if (isProjectChat || (href && href.includes('/g/g-p-'))) {
+        if (item.style.display === 'none') {
+          item.style.removeProperty('display');
+        }
+        return;
+      }
+
+      const key = item.getAttribute('data-sidebar-chatgpt-conversation-key');
+      const convId = key || href;
+
+      if (convId) {
+        if (seenIds.has(convId)) {
+          item.style.setProperty('display', 'none', 'important');
+        } else {
+          seenIds.add(convId);
+          if (item.style.display === 'none') {
+            item.style.removeProperty('display');
+          }
+        }
+      }
+    });
+  }
+
+  setInterval(deduplicateSidebarChats, 80);
+
+  const observer = new MutationObserver(deduplicateSidebarChats);
+  function initObserver() {
+    const sidebar = document.querySelector('#app-shell-sidebar') || document.querySelector('nav') || document.body;
+    if (sidebar) {
+      observer.observe(sidebar, { childList: true, subtree: true });
+    } else {
+      setTimeout(initObserver, 300);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initObserver);
+  } else {
+    initObserver();
+  }
+})();
+
+// ==========================================
+// ðŸš€ ERROR BOUNDARY AUTO-RECOVERY ("HIT A SNAG" FIX)
+// ==========================================
+(function() {
+  let lastRecoverTime = 0;
+  function autoRecoverSnag() {
+    const now = Date.now();
+    if (now - lastRecoverTime < 2500) return;
+
+    const bodyText = document.body ? (document.body.innerText || '') : '';
+    if (bodyText.includes('ChatGPT hit a snag') || bodyText.includes('Something went wrong. Try again to continue')) {
+      const tryAgainBtn = Array.from(document.querySelectorAll('button')).find(b => {
+        const txt = (b.textContent || '').trim().toLowerCase();
+        return txt === 'try again' || txt.includes('try again');
+      });
+
+      if (tryAgainBtn) {
+        lastRecoverTime = now;
+        console.log('[AutoRecover] Automatically recovering from snag...');
+        tryAgainBtn.click();
+      }
+    }
+  }
+
+  setInterval(autoRecoverSnag, 250);
+})();
+
+// ==========================================
+
+// ==========================================
+// ðŸš€ SCHEDULED PAGE PERSONALIZATION & USER ISOLATION
+// ==========================================
+(function() {
+  const masterTasks = [
+    'Bangladesh Finance Brief',
+    'Malaysia Transfer Deadlines',
+    'Fall 2027 Transfer Deadlines'
+  ];
+
+  function personalizeScheduledPage() {
+    if (!window.location.pathname.startsWith('/scheduled')) return;
+    const main = document.querySelector('main');
+    if (!main) return;
+
+    const currentEmail = window.customerEmail || 'user@gmail.com';
+
+    // 1. Personalize subtitle
+    const elements = main.querySelectorAll('p, div, span');
+    elements.forEach(el => {
+      if (el.children.length === 0) {
+        const text = el.textContent.trim();
+        if (text.startsWith('Ask ChatGPT to schedule tasks') && !text.includes(currentEmail)) {
+          el.textContent = 'Ask ChatGPT to schedule tasks and reminders for your Personal Space (' + currentEmail + ')';
+        }
+      }
+    });
+
+    // 2. Hide master tasks rows safely
+    masterTasks.forEach(title => {
+      // Find buttons inside main whose aria-label contains title
+      const buttons = main.querySelectorAll('button[aria-label*="' + title + '"]');
+      buttons.forEach(btn => {
+        const row = btn.closest('.row-_z4Vo0') || btn.closest('.relative.group') || btn.closest('li') || btn;
+        if (row && row !== main && row.tagName !== 'MAIN' && row.id !== 'root') {
+          row.style.setProperty('display', 'none', 'important');
+        }
+      });
+
+      // Also check exact matching text nodes
+      const textNodes = main.querySelectorAll('span, p, div, h2, h3');
+      textNodes.forEach(s => {
+        if (s.children.length === 0 && s.textContent.trim() === title) {
+          const row = s.closest('.row-_z4Vo0') || s.closest('.relative.group') || s.closest('li');
+          if (row && row !== main && row.tagName !== 'MAIN' && row.id !== 'root') {
+            row.style.setProperty('display', 'none', 'important');
+          }
+        }
+      });
+    });
+  }
+
+  setInterval(personalizeScheduledPage, 80);
+  window.addEventListener('DOMContentLoaded', personalizeScheduledPage);
+})();
+
+
+// ==========================================
+// ðŸš€ TOP CHAT / WORK SWITCHER VISIBILITY CONTROLLER
+// ==========================================
+(function() {
+  window.showWorkSwitcher = false;
+
+  async function checkWorkModePermission() {
+    try {
+      const res = await fetch('/api/user-info', { credentials: 'include' });
+      if (res.ok) {
+        const data = await res.json();
+        window.showWorkSwitcher = (data && data.show_work_switcher === 1);
+        applyWorkModeVisibility();
+      }
+    } catch(e) {}
+  }
+  checkWorkModePermission();
+
+  function applyWorkModeVisibility() {
+    if (document.body) {
+      if (window.showWorkSwitcher) {
+        document.body.classList.add('tn-show-work-mode');
+      } else {
+        document.body.classList.remove('tn-show-work-mode');
+      }
+    }
+
+    // 1. Direct toggle container selection (Desktop & Mobile)
+    const toggles = document.querySelectorAll(
+      'div[role="group"][aria-label="Composer mode"], .root-HUUPVC, div[class*="root-HUUPVC"], [class*="mode-toggle-track"]'
+    );
+    toggles.forEach(t => {
+      const target = t.closest('[data-app-shell-header-obstacle="true"]') || t.closest('header > div') || t;
+      if (!window.showWorkSwitcher) {
+        target.style.setProperty('display', 'none', 'important');
+      } else {
+        target.style.removeProperty('display');
+      }
+    });
+
+    // 2. Deep ancestor traversal from buttons with text 'Work' (Mobile universal fix)
+    const allButtons = document.querySelectorAll('header button, [role="group"] button, main button, button');
+    for (let i = 0; i < allButtons.length; i++) {
+      const btn = allButtons[i];
+      const text = (btn.innerText || btn.textContent || '').trim();
+      if (text === 'Work') {
+        if (!window.showWorkSwitcher) {
+          btn.style.setProperty('display', 'none', 'important');
+        } else {
+          btn.style.removeProperty('display');
+        }
+
+        // Traverse upwards from Work button until we find the pill container holding Chat & Work
+        let p = btn.parentElement;
+        while (p && p !== document.body && p.tagName !== 'HEADER' && p.tagName !== 'MAIN') {
+          const pText = p.textContent || '';
+          if (pText.includes('Chat') && pText.includes('Work')) {
+            if (!window.showWorkSwitcher) {
+              p.style.setProperty('display', 'none', 'important');
+            } else {
+              p.style.removeProperty('display');
+            }
+            break;
+          }
+          p = p.parentElement;
+        }
+      } else if (text === 'Chat') {
+        const isToggleChat = btn.getAttribute('aria-pressed') !== null ||
+                             (btn.className && btn.className.includes('mode-toggle')) ||
+                             (btn.parentElement && btn.parentElement.textContent.includes('Work'));
+        if (isToggleChat) {
+          if (!window.showWorkSwitcher) {
+            btn.style.setProperty('display', 'none', 'important');
+          } else {
+            btn.style.removeProperty('display');
+          }
+        }
+      }
+    }
+  }
+
+  setInterval(applyWorkModeVisibility, 80);
+  window.addEventListener('DOMContentLoaded', applyWorkModeVisibility);
+})();
+
+
+// ==========================================
+// ðŸš€ USAGE CREDITS MODAL & SIDEBAR MENU CONTROLLER
+// ==========================================
+(function() {
+  const SPEEDOMETER_ICON_SVG = `<span aria-hidden="true" class="relative inline-flex shrink-0 icon-xs browser:icon-base"><span class="absolute inset-0 size-full"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-full"><path d="M3.33334 10C3.33334 6.3181 6.31811 3.33333 10 3.33333C13.6819 3.33333 16.6667 6.3181 16.6667 10C16.6667 12.2822 15.5235 14.2974 13.7842 15.5" stroke="currentColor" stroke-width="1.33" stroke-linecap="round"/><path d="M10 10L12.5 7.5" stroke="currentColor" stroke-width="1.33" stroke-linecap="round"/><circle cx="10" cy="10" r="1.25" fill="currentColor"/><path d="M6.21582 15.5C4.47648 14.2974 3.33334 12.2822 3.33334 10" stroke="currentColor" stroke-width="1.33" stroke-linecap="round"/></svg></span></span>`;
+
+  // 1. Transform Library Button to Usage Credits (Desktop & Mobile)
+  function applyUsageCreditMenuItem() {
+    const libraryElements = document.querySelectorAll(
+      'button[data-sidebar-destination="builtin:library"], a[href*="/library"], [role="dialog"] button, [role="dialog"] a, nav button, nav a, aside button, aside a'
+    );
+    libraryElements.forEach(btn => {
+      const isLibraryTarget = btn.getAttribute('data-sidebar-destination') === 'builtin:library' ||
+                             (btn.getAttribute('href') && btn.getAttribute('href').includes('/library')) ||
+                             (btn.innerText && btn.innerText.trim() === 'Library') ||
+                             (btn.getAttribute('aria-label') === 'Library');
+      if (!isLibraryTarget) return;
+
+      // Update aria-label
+      if (btn.getAttribute('aria-label') !== 'Usage Credits') {
+        btn.setAttribute('aria-label', 'Usage Credits');
+      }
+
+      // Replace icon
+      const iconSlot = btn.querySelector('.icon-leading-slot') || btn.querySelector('svg')?.parentElement;
+      if (iconSlot && !iconSlot.getAttribute('data-credits-icon')) {
+        iconSlot.setAttribute('data-credits-icon', 'true');
+        iconSlot.innerHTML = SPEEDOMETER_ICON_SVG;
+      }
+
+      // Replace text label
+      const srOnly = btn.querySelector('.sr-only');
+      if (srOnly) {
+        srOnly.className = 'text-fade-truncate';
+        srOnly.textContent = 'Usage Credits';
+      } else {
+        const labelSpan = btn.querySelector('.text-fade-truncate') || 
+                          Array.from(btn.querySelectorAll('span, div')).find(s => s.children.length === 0 && (s.textContent || '').trim() === 'Library');
+        if (labelSpan && labelSpan.textContent !== 'Usage Credits') {
+          labelSpan.textContent = 'Usage Credits';
+        } else if (!labelSpan && btn.innerText && btn.innerText.includes('Library')) {
+          for (let node of btn.childNodes) {
+            if (node.nodeType === 3 && node.nodeValue && node.nodeValue.includes('Library')) {
+              node.nodeValue = node.nodeValue.replace('Library', 'Usage Credits');
+            }
+          }
+        }
+      }
+
+      // Intercept Click & Touch
+      if (!btn.getAttribute('data-credits-bound')) {
+        btn.setAttribute('data-credits-bound', 'true');
+        const handleOpenCredits = function(e) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          e.stopPropagation();
+          openUsageCreditsModal();
+          return false;
+        };
+        btn.addEventListener('click', handleOpenCredits, true);
+        btn.addEventListener('touchend', handleOpenCredits, true);
+      }
+    });
+  }
+
+  // 2. Build & Open Usage Credits Modal
+  let isFetching = false;
+  window.openUsageCreditsModal = async function() {
+    let modal = document.getElementById('toolnest-credits-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'toolnest-credits-modal';
+      modal.style.cssText = `
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(5px);
+        font-family: inherit;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      `;
+
+      modal.innerHTML = `
+        <div id="toolnest-credits-card" style="
+          width: 90%;
+          max-width: 480px;
+          max-height: 90vh;
+          overflow-y: auto;
+          border-radius: 18px;
+          padding: 26px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+          transform: scale(0.95);
+          transition: transform 0.2s ease-in-out;
+          border: 1px solid rgba(128,128,128,0.25);
+          box-sizing: border-box;
+        ">
+          <!-- Header -->
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: 20px;">
+            <div>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size: 22px;">&#9889;</span>
+                <h3 id="creditsModalTitle" style="font-size: 19px; font-weight: 700; margin: 0;">Usage Credits</h3>
+              </div>
+              <p id="creditsModalSubtitle" style="font-size: 13px; margin: 4px 0 0 0; opacity: 0.75;">Daily quota allocated for your account</p>
+            </div>
+            <button id="creditsCloseX" style="background:transparent;border:none;cursor:pointer;padding:6px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:currentColor;opacity:0.7;transition:opacity 0.15s;" title="Close"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"></line><line x1="1" y1="13" x2="13" y2="1"></line></svg></button>
+          </div>
+
+          <!-- Account Pill -->
+          <div style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            font-size: 12px;
+            background: rgba(128,128,128,0.1);
+          ">
+            <span id="creditsUserEmail" style="font-weight: 600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:280px;">Loading...</span>
+            <span style="background: #10b981; color: white; padding: 2px 8px; border-radius: 12px; font-weight: 700; font-size: 10px; text-transform: uppercase;">Personal Space</span>
+          </div>
+
+          <!-- Content / Stat Cards -->
+          <div id="creditsCardsContainer" style="display:flex; flex-direction:column; gap: 12px;">
+            <div style="text-align:center; padding: 30px 0; font-size: 14px; opacity:0.7;">Loading usage credits...</div>
+          </div>
+
+          <!-- Footer Info -->
+          <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid rgba(128,128,128,0.15); display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size: 11px; opacity: 0.65; display:flex; align-items:center; gap:4px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:2px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Resets daily at 12:00 AM (BD)
+            </span>
+            <button id="creditsCloseBtn" style="
+              background: #2563eb;
+              color: white;
+              border: none;
+              padding: 7px 18px;
+              border-radius: 8px;
+              font-weight: 600;
+              font-size: 13px;
+              cursor: pointer;
+              transition: background 0.15s;
+            ">Close</button>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(modal);
+
+      // Event listeners to close
+      function closeModal() {
+        modal.style.opacity = '0';
+        const card = document.getElementById('toolnest-credits-card');
+        if (card) card.style.transform = 'scale(0.95)';
+        setTimeout(() => { modal.style.display = 'none'; }, 200);
+      }
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
+      document.getElementById('creditsCloseX').onclick = closeModal;
+      document.getElementById('creditsCloseBtn').onclick = closeModal;
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+      });
+    }
+
+    // Apply Light/Dark Mode styling dynamically
+    const isDark = document.documentElement.classList.contains('dark') || 
+                   document.body.classList.contains('dark') || 
+                   (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    const card = document.getElementById('toolnest-credits-card');
+    if (isDark) {
+      card.style.background = '#212121';
+      card.style.color = '#ececec';
+      document.getElementById('creditsCloseX').style.color = '#ececec';
+    } else {
+      card.style.background = '#ffffff';
+      card.style.color = '#111827';
+      document.getElementById('creditsCloseX').style.color = '#111827';
+    }
+
+    // Show modal
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      modal.style.opacity = '1';
+      card.style.transform = 'scale(1)';
+    });
+
+    // Fetch credits data
+    try {
+      const res = await fetch('/api/user-credits');
+      const data = await res.json();
+      if (data && data.success) {
+        const email = data.email || window.customerEmail || data.username;
+        document.getElementById('creditsUserEmail').textContent = email;
+
+        const c = data.credits;
+        const renderItem = (icon, title, used, max, color, barColor) => {
+          const pct = max > 0 ? Math.min(100, Math.round((used / max) * 100)) : 0;
+          const remaining = Math.max(0, max - used);
+          return `
+            <div style="
+              background: ${isDark ? '#2a2a2a' : '#f9fafb'};
+              border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)'};
+              border-radius: 12px;
+              padding: 12px 14px;
+            ">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 6px;">
+                <span style="font-size: 13px; font-weight: 600; display:flex; align-items:center; gap:6px;">
+                  <span>${icon}</span> ${title}
+                </span>
+                <span style="font-size: 13px; font-weight: 700; color: ${color};">
+                  ${used} <span style="opacity:0.6; font-weight:500;">/ ${max} per day</span>
+                </span>
+              </div>
+              <div style="
+                width: 100%;
+                height: 6px;
+                background: ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'};
+                border-radius: 6px;
+                overflow: hidden;
+                margin-bottom: 4px;
+              ">
+                <div style="
+                  width: ${pct}%;
+                  height: 100%;
+                  background: ${barColor};
+                  border-radius: 6px;
+                  transition: width 0.4s ease;
+                "></div>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size: 11px; opacity:0.65;">
+                <span>${remaining} remaining today</span>
+                <span>${pct}% used</span>
+              </div>
+            </div>
+          `;
+        };
+
+        const container = document.getElementById('creditsCardsContainer');
+        container.innerHTML = `
+          ${renderItem('\uD83D\uDCAC', 'Chat Messages', c.chat.used, c.chat.max, '#10b981', '#10b981')}
+          ${renderItem('\uD83C\uDFA8', 'AI Images', c.image.used, c.image.max, '#8b5cf6', '#8b5cf6')}
+          ${renderItem('\uD83D\uDCC1', 'File Uploads', c.upload.used, c.upload.max, '#0284c7', '#0284c7')}
+        `;
+      }
+    } catch(err) {
+      console.error('[CreditsModal] Failed to load credits:', err);
+    }
+  };
+
+  // Run menu replacement loop
+  setInterval(applyUsageCreditMenuItem, 80);
+  window.addEventListener('DOMContentLoaded', applyUsageCreditMenuItem);
+
+  // Check URL query parameter ?openCredits=1
+  if (window.location.search.includes('openCredits=1')) {
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('openCredits');
+      window.history.replaceState({}, '', url.pathname + (url.search ? url.search : '') + url.hash);
+    } catch(e) {}
+    setTimeout(() => { openUsageCreditsModal(); }, 600);
+  }
+})();
+
+
+// ==========================================
+// ðŸš€ HIDE UNWANTED MENUS (Sites, Plugins, Agents, Maps, GPTs, Explore) (Desktop & Mobile)
+// ==========================================
+// ðŸš€ HIDE EXPLORE MENU BUTTON & POPUP
+// ==========================================
+(function() {
+  function hideExplore() {
+    // 1. Hide unwanted sidebar navigation links (Desktop & Mobile)
+    const unwantedSelectors = [
+      'a[href*="/plugins"]',
+      'a[href*="/maps"]',
+      'a[href*="/gpts"]',
+      'a[href*="/sites"]',
+      'a[href*="/agents"]',
+      'button[data-sidebar-destination*="plugins"]',
+      'button[data-sidebar-destination*="maps"]',
+      'button[data-sidebar-destination*="gpts"]',
+      'button[data-sidebar-destination*="sites"]',
+      'button[data-sidebar-destination*="agents"]'
+    ].join(',');
+    document.querySelectorAll(unwantedSelectors).forEach(el => {
+      el.style.setProperty('display', 'none', 'important');
+    });
+
+    // 2. Hide unwanted menu buttons and links by text/label
+    const sidebarButtons = document.querySelectorAll('nav[aria-label="Chat history"] button, nav[aria-label="Chat history"] a, #app-shell-sidebar button, #app-shell-sidebar a, aside button, aside a, [role="dialog"] button, [role="dialog"] a');
+    sidebarButtons.forEach(btn => {
+      const text = (btn.innerText || btn.textContent || '').trim();
+      const aria = btn.getAttribute('aria-label') || '';
+      if (
+        text === 'Explore' || aria === 'Explore' ||
+        text === 'Plugins' || aria === 'Plugins' ||
+        text.startsWith('Maps') || aria.startsWith('Maps') ||
+        text === 'GPTs' || aria === 'GPTs' ||
+        text === 'Sites' || aria === 'Sites' ||
+        text === 'Agents' || aria === 'Agents'
+      ) {
+        btn.style.setProperty('display', 'none', 'important');
+      }
+      const span = btn.querySelector('.text-fade-truncate');
+      if (span) {
+        const sText = span.textContent.trim();
+        if (sText === 'Explore' || sText === 'Plugins' || sText.startsWith('Maps') || sText === 'GPTs' || sText === 'Sites' || sText === 'Agents') {
+          btn.style.setProperty('display', 'none', 'important');
+        }
+      }
+    });
+
+    // 3. Hide Radix Popups for Explore GPTs
+    const popups = document.querySelectorAll('[data-radix-popper-content-wrapper]');
+    popups.forEach(p => {
+      if (p.innerText && (p.innerText.includes('Explore GPTs') || p.innerText.includes('My GPTs'))) {
+        p.style.setProperty('display', 'none', 'important');
+      }
+    });
+  }
+
+  setInterval(hideExplore, 80);
+  window.addEventListener('DOMContentLoaded', hideExplore);
+})();
+
+// ==========================================
+// ðŸš€ HIDE WORKSPACE LIMIT HIT BANNER (Desktop & Mobile)
+// ==========================================
+(function() {
+  function hideWorkspaceLimitBanner() {
+    const allButtons = document.querySelectorAll('button');
+    for (let i = 0; i < allButtons.length; i++) {
+      const text = (allButtons[i].innerText || allButtons[i].textContent || '').trim();
+      if (text === 'Turn on auto-reload' || text.toLowerCase().includes('auto-reload')) {
+        const box = allButtons[i].closest('[data-app-shell-header-obstacle="true"]') ||
+                    allButtons[i].closest('section') ||
+                    allButtons[i].closest('aside') ||
+                    allButtons[i].closest('div.flex') ||
+                    allButtons[i].parentElement;
+        if (box && box.style.display !== 'none') {
+          box.style.setProperty('display', 'none', 'important');
+        }
+      }
+    }
+
+    const textNodes = document.querySelectorAll('p, span, div');
+    for (let i = 0; i < textNodes.length; i++) {
+      const node = textNodes[i];
+      if (node.children.length === 0 && (node.textContent || '').includes('A workspace member hit a limit')) {
+        const box = node.closest('[data-app-shell-header-obstacle="true"]') ||
+                    node.closest('section') ||
+                    node.closest('aside') ||
+                    node.parentElement?.parentElement ||
+                    node.parentElement;
+        if (box && box.style.display !== 'none') {
+          box.style.setProperty('display', 'none', 'important');
+        }
+      }
+    }
+  }
+
+  setInterval(hideWorkspaceLimitBanner, 80);
+  window.addEventListener('DOMContentLoaded', hideWorkspaceLimitBanner);
+})();
+
+// ==========================================
+
+// ==========================================
+
+// ==========================================
+// ðŸš€ CHAT EXPORT FEATURE (WORD, PDF, JSON, TXT)
+// ==========================================
+(function() {
+    async function getCleanConversationData() {
+        let title = document.title ? document.title.replace(/\s*\|\s*ChatGPT.*/i, '').replace(/ChatGPT/i, '').trim() : '';
+        if (!title || title === 'ChatGPT') {
+            const firstHeading = document.querySelector('h1');
+            if (firstHeading && firstHeading.innerText.trim()) title = firstHeading.innerText.trim();
+        }
+        if (!title) title = 'ChatGPT_Conversation';
+
+        const turns = [];
+
+        // 1. Try modern ChatGPT h4 selectors ("You said:" / "ChatGPT said:")
+        const headings = Array.from(document.querySelectorAll('h4')).filter(h => {
+            const txt = (h.innerText || '').trim();
+            return txt === 'You said:' || txt === 'ChatGPT said:' || h.getAttribute('data-conversation-role') === 'assistant';
+        });
+
+        if (headings.length > 0) {
+            headings.forEach(h => {
+                const isUser = (h.innerText || '').trim().includes('You said');
+                const role = isUser ? 'user' : 'assistant';
+                
+                let contentEl = h.nextElementSibling;
+                if (!contentEl || contentEl.tagName === 'H4') {
+                    contentEl = h.parentElement ? (h.parentElement.nextElementSibling || h.parentElement) : null;
+                }
+                if (!contentEl) {
+                    contentEl = h.closest('.block-BQZwFn') || h.closest('[class*="block-"]');
+                }
+
+                if (contentEl) {
+                    const clone = contentEl.cloneNode(true);
+                    clone.querySelectorAll('button, svg, [role="button"], [aria-label*="action" i], [aria-label*="Copy" i], [aria-label*="Share" i], [aria-label*="Edit" i], .sr-only, h4').forEach(n => n.remove());
+                    const text = clone.innerText.trim();
+                    const html = clone.innerHTML.trim();
+                    if (text.length > 0) {
+                        turns.push({ role, text, html });
+                    }
+                }
+            });
+        }
+
+        // 2. Try classic article / turn / author role selectors
+        if (turns.length === 0) {
+            const turnElements = document.querySelectorAll('article, [data-testid^="conversation-turn-"], [data-message-author-role]');
+            turnElements.forEach(el => {
+                const userRoleEl = el.querySelector('[data-message-author-role="user"]');
+                const assistantRoleEl = el.querySelector('[data-message-author-role="assistant"]');
+                
+                let role = 'user';
+                let contentEl = userRoleEl || el;
+                if (assistantRoleEl || el.getAttribute('data-message-author-role') === 'assistant') {
+                    role = 'assistant';
+                    contentEl = assistantRoleEl || el;
+                } else if (!userRoleEl) {
+                    if (el.querySelector('svg.lucide-user') || el.classList.contains('user-turn')) role = 'user';
+                    else role = 'assistant';
+                }
+
+                const clone = contentEl.cloneNode(true);
+                clone.querySelectorAll('button, svg, [role="button"], [aria-label="Response actions"], .sr-only').forEach(n => n.remove());
+
+                const text = clone.innerText.trim();
+                const html = clone.innerHTML.trim();
+                if (text.length > 0) {
+                    turns.push({ role, text, html });
+                }
+            });
+        }
+
+        // 3. Fallback: Fetch directly from our local backend API (Instant <5ms from SQLite cache!)
+        if (turns.length === 0 && (window.location.pathname.startsWith('/c/') || window.location.pathname.includes('/c/'))) {
+            const pathParts = window.location.pathname.split('/c/');
+            const chatId = pathParts[1] ? pathParts[1].split('/')[0].split('?')[0].split('#')[0] : '';
+            if (chatId) {
+                try {
+                    const res = await fetch('/backend-api/conversation/' + chatId);
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data.title) title = data.title;
+                        if (data.mapping) {
+                            const sortedNodes = Object.values(data.mapping)
+                                .filter(n => n.message && n.message.content && n.message.content.parts && n.message.content.parts.length > 0)
+                                .sort((a, b) => (a.message.create_time || 0) - (b.message.create_time || 0));
+                            
+                            sortedNodes.forEach(n => {
+                                const m = n.message;
+                                const r = (m.author && m.author.role === 'user') ? 'user' : 'assistant';
+                                const text = m.content.parts.join('\n').trim();
+                                if (text && r !== 'system') {
+                                    const html = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+                                    turns.push({ role: r, text, html });
+                                }
+                            });
+                        }
+                    }
+                } catch(err) {
+                    console.warn('Backend API fallback failed:', err);
+                }
+            }
+        }
+
+        return { title, turns };
+    }
+
+    async function exportToWord() {
+        const { title, turns } = await getCleanConversationData();
+        if (turns.length === 0) {
+            alert('à¦•à§‹à¦¨à§‹ à¦šà§à¦¯à¦¾à¦Ÿ à¦®à§‡à¦¸à§‡à¦œ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿!');
+            return;
+        }
+
+        let bodyHtml = `
+            <div style="max-width: 800px; margin: 0 auto; font-family: Calibri, 'Segoe UI', Arial, sans-serif; color: #1f2937;">
+                <h1 style="color: #047857; font-size: 20pt; border-bottom: 2px solid #047857; padding-bottom: 8px; margin-bottom: 4px;">${title}</h1>
+                <p style="color: #6b7280; font-size: 9pt; margin-bottom: 24px;">Exported from ChatGPT â€¢ Date: ${new Date().toLocaleString()}</p>
+        `;
+
+        turns.forEach(turn => {
+            if (turn.role === 'user') {
+                bodyHtml += `
+                    <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; border-left: 5px solid #16a34a; padding: 12px 16px; margin: 16px 0 8px 0; border-radius: 6px;">
+                        <div style="font-weight: bold; color: #166534; font-size: 11pt; margin-bottom: 6px;">ðŸ‘¤ User:</div>
+                        <div style="font-size: 11pt; line-height: 1.5;">${turn.html || turn.text.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
+            } else {
+                bodyHtml += `
+                    <div style="background-color: #ffffff; border: 1px solid #e5e7eb; border-left: 5px solid #2563eb; padding: 14px 18px; margin: 8px 0 24px 0; border-radius: 6px;">
+                        <div style="font-weight: bold; color: #1e40af; font-size: 11pt; margin-bottom: 8px;">ðŸ¤– ChatGPT:</div>
+                        <div style="font-size: 11pt; line-height: 1.6;">${turn.html || turn.text.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
+            }
+        });
+
+        bodyHtml += `</div>`;
+
+        const fullWordHtml = `
+            <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+            <head>
+                <meta charset='utf-8'>
+                <title>${title}</title>
+                <style>
+                    body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; line-height: 1.6; color: #111; }
+                    pre { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; font-family: Consolas, monospace; font-size: 9.5pt; }
+                    code { background: #f1f5f9; padding: 2px 4px; font-family: Consolas, monospace; font-size: 9.5pt; }
+                    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+                    th, td { border: 1px solid #d1d5db; padding: 6px 10px; text-align: left; }
+                </style>
+            </head>
+            <body>
+                ${bodyHtml}
+            </body>
+            </html>
+        `;
+
+        const blob = new Blob(['\ufeff' + fullWordHtml], { type: 'application/msword;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const cleanFileName = title.replace(/[^a-zA-Z0-9_\u0980-\u09FF\s\-]/g, '').trim().slice(0, 50) || 'chat_export';
+        a.download = `${cleanFileName}.doc`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    async function exportToPdf() {
+        const { title, turns } = await getCleanConversationData();
+        if (turns.length === 0) {
+            alert('à¦•à§‹à¦¨à§‹ à¦šà§à¦¯à¦¾à¦Ÿ à¦®à§‡à¦¸à§‡à¦œ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿!');
+            return;
+        }
+
+        let printHtml = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <title>${title}</title>
+                <style>
+                    @page { margin: 15mm; size: A4; }
+                    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 10.5pt; line-height: 1.5; color: #1f2937; margin: 0; padding: 10px; }
+                    h1 { color: #047857; font-size: 18pt; border-bottom: 2px solid #047857; padding-bottom: 6px; margin-bottom: 4px; }
+                    .meta { color: #6b7280; font-size: 8.5pt; margin-bottom: 16px; }
+                    .turn-user { background-color: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; padding: 10px 14px; margin: 12px 0 6px 0; border-radius: 4px; page-break-inside: avoid; }
+                    .turn-user .author { font-weight: bold; color: #166534; font-size: 10pt; margin-bottom: 4px; }
+                    .turn-assistant { background-color: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #2563eb; padding: 12px 16px; margin: 6px 0 16px 0; border-radius: 4px; page-break-inside: avoid; }
+                    .turn-assistant .author { font-weight: bold; color: #1e40af; font-size: 10pt; margin-bottom: 6px; }
+                    pre { background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px 12px; font-family: Consolas, monospace; font-size: 9pt; border-radius: 4px; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; }
+                    code { background: #f1f5f9; padding: 2px 4px; font-family: Consolas, monospace; font-size: 9pt; }
+                    table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+                    th, td { border: 1px solid #d1d5db; padding: 6px 8px; text-align: left; font-size: 9pt; }
+                    th { background-color: #f3f4f6; }
+                </style>
+            </head>
+            <body>
+                <h1>${title}</h1>
+                <div class="meta">Exported from ChatGPT â€¢ Date: ${new Date().toLocaleString()}</div>
+        `;
+
+        turns.forEach(turn => {
+            if (turn.role === 'user') {
+                printHtml += `
+                    <div class="turn-user">
+                        <div class="author">ðŸ‘¤ User</div>
+                        <div>${turn.html || turn.text.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
+            } else {
+                printHtml += `
+                    <div class="turn-assistant">
+                        <div class="author">ðŸ¤– ChatGPT</div>
+                        <div>${turn.html || turn.text.replace(/\n/g, '<br>')}</div>
+                    </div>
+                `;
+            }
+        });
+
+        printHtml += `</body></html>`;
+
+        const iframe = document.createElement('iframe');
+        iframe.style.position = 'fixed';
+        iframe.style.right = '0';
+        iframe.style.bottom = '0';
+        iframe.style.width = '0';
+        iframe.style.height = '0';
+        iframe.style.border = '0';
+        document.body.appendChild(iframe);
+
+        const doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(printHtml);
+        doc.close();
+
+        setTimeout(() => {
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+            setTimeout(() => iframe.remove(), 60000);
+        }, 500);
+    }
+
+    async function exportToJson() {
+        const { title, turns } = await getCleanConversationData();
+        if (turns.length === 0) {
+            alert('à¦•à§‹à¦¨à§‹ à¦šà§à¦¯à¦¾à¦Ÿ à¦®à§‡à¦¸à§‡à¦œ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿!');
+            return;
+        }
+
+        const exportData = {
+            title: title,
+            exported_at: new Date().toISOString(),
+            platform: "ChatGPT",
+            total_messages: turns.length,
+            conversation: turns.map(t => ({
+                role: t.role,
+                content: t.text
+            }))
+        };
+
+        const jsonStr = JSON.stringify(exportData, null, 2);
+        const blob = new Blob([jsonStr], { type: 'application/json;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const cleanFileName = title.replace(/[^a-zA-Z0-9_\u0980-\u09FF\s\-]/g, '').trim().slice(0, 50) || 'chat_export';
+        a.download = `${cleanFileName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    async function exportToTxt() {
+        const { title, turns } = await getCleanConversationData();
+        if (turns.length === 0) {
+            alert('à¦•à§‹à¦¨à§‹ à¦šà§à¦¯à¦¾à¦Ÿ à¦®à§‡à¦¸à§‡à¦œ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿà¦¨à¦¿!');
+            return;
+        }
+
+        let txt = `======================================================\n`;
+        txt += `Title: ${title}\n`;
+        txt += `Date: ${new Date().toLocaleString()}\n`;
+        txt += `======================================================\n\n`;
+
+        turns.forEach(turn => {
+            const author = turn.role === 'user' ? 'ðŸ‘¤ [USER]' : 'ðŸ¤– [CHATGPT]';
+            txt += `${author}:\n${turn.text}\n\n------------------------------------------------------\n\n`;
+        });
+
+        const blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const cleanFileName = title.replace(/[^a-zA-Z0-9_\u0980-\u09FF\s\-]/g, '').trim().slice(0, 50) || 'chat_export';
+        a.download = `${cleanFileName}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function findShareButton() {
+        const testIdBtn = document.querySelector('[data-testid="share-chat-button"]');
+        if (testIdBtn) return testIdBtn;
+
+        const ariaBtn = document.querySelector('button[aria-label="Share"], button[title="Share"]');
+        if (ariaBtn) return ariaBtn;
+
+        const allBtns = Array.from(document.querySelectorAll('button'));
+        return allBtns.find(b => {
+            const txt = (b.innerText || '').trim();
+            return txt === 'Share' || txt === 'à¦¶à§‡à¦¯à¦¼à¦¾à¦°';
+        }) || null;
+    }
+
+    function ensureExportUI() {
+        const isChatPage = window.location.pathname.startsWith('/c/') || window.location.pathname.includes('/c/');
+        const shareBtn = findShareButton();
+        const hasMessages = document.querySelector('article, [data-testid^="conversation-turn-"], [data-message-author-role], h4');
+        let container = document.getElementById('tn-export-container');
+        let menu = document.getElementById('tn-export-menu');
+
+        if (!isChatPage && !hasMessages && !shareBtn) {
+            if (container) container.style.display = 'none';
+            if (menu) menu.style.display = 'none';
+            return;
+        }
+
+        if (!container) {
+            container = document.createElement('div');
+            container.id = 'tn-export-container';
+            container.className = 'tn-export-wrapper';
+            container.style.cssText = 'position: relative; display: inline-flex; align-items: center; margin-right: 6px; z-index: 1000;';
+            
+            container.innerHTML = `
+                <button id="tn-export-trigger" class="tn-export-btn" type="button" title="Export / Download Chat" style="display: inline-flex; align-items: center; gap: 5px; height: 32px; padding: 0 10px; background-color: #10a37f; color: #ffffff !important; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; font-size: 12.5px; font-weight: 500; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1); white-space: nowrap;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Export</span>
+                </button>
+            `;
+
+            // Menu attached to body to prevent ANY titlebar overflow clipping!
+            menu = document.createElement('div');
+            menu.id = 'tn-export-menu';
+            menu.className = 'tn-export-dropdown';
+            menu.style.cssText = 'display: none; position: fixed; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); min-width: 210px; padding: 6px 0; z-index: 999999;';
+
+            menu.innerHTML = `
+                <button class="tn-export-item" id="tn-export-pdf" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 14px; background: none; border: none; text-align: left; font-size: 13px; color: #374151; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Download as PDF</span>
+                </button>
+                <button class="tn-export-item" id="tn-export-word" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 14px; background: none; border: none; text-align: left; font-size: 13px; color: #374151; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+                    <span>Download as Word (.doc)</span>
+                </button>
+                <button class="tn-export-item" id="tn-export-json" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 14px; background: none; border: none; text-align: left; font-size: 13px; color: #374151; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    <span>Download as JSON (.json)</span>
+                </button>
+                <button class="tn-export-item" id="tn-export-txt" type="button" style="display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px 14px; background: none; border: none; text-align: left; font-size: 13px; color: #374151; cursor: pointer;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10a37f" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    <span>Download as Text (.txt)</span>
+                </button>
+            `;
+            document.body.appendChild(menu);
+
+            const trigger = container.querySelector('#tn-export-trigger');
+
+            function positionDropdown() {
+                const rect = trigger.getBoundingClientRect();
+                menu.style.setProperty('position', 'fixed', 'important');
+                menu.style.setProperty('top', (rect.bottom + 6) + 'px', 'important');
+                menu.style.setProperty('left', Math.max(10, (rect.right - 210)) + 'px', 'important');
+                menu.style.setProperty('z-index', '999999', 'important');
+            }
+
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (menu.style.display === 'none' || !menu.style.display) {
+                    positionDropdown();
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!container.contains(e.target) && !menu.contains(e.target)) {
+                    menu.style.display = 'none';
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (menu.style.display === 'block') positionDropdown();
+            });
+
+            menu.querySelector('#tn-export-word').addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.style.display = 'none';
+                exportToWord();
+            });
+
+            menu.querySelector('#tn-export-pdf').addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.style.display = 'none';
+                exportToPdf();
+            });
+
+            menu.querySelector('#tn-export-json').addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.style.display = 'none';
+                exportToJson();
+            });
+
+            menu.querySelector('#tn-export-txt').addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.style.display = 'none';
+                exportToTxt();
+            });
+        }
+
+        // Mount directly beside Share button if found!
+        if (shareBtn && shareBtn.parentNode) {
+            if (container.parentNode !== shareBtn.parentNode || container.nextSibling !== shareBtn) {
+                shareBtn.parentNode.insertBefore(container, shareBtn);
+                container.style.position = 'relative';
+                container.style.top = 'auto';
+                container.style.right = 'auto';
+            }
+        } else {
+            // Fallback: top right floating
+            if (!container.parentNode) {
+                document.body.appendChild(container);
+            }
+            container.style.position = 'fixed';
+            container.style.top = '12px';
+            container.style.right = '80px';
+        }
+
+        container.style.display = 'inline-flex';
+    }
+
+    setInterval(ensureExportUI, 1000);
+})();
+
+// ==========================================
+// ðŸš€ 12. ARCHIVED CHAT & MESSAGE LIMIT HANDLER
+// ==========================================
+(function() {
+    window.__isCurrentChatArchived = false;
+    window.__archivedChatMap = window.__archivedChatMap || {};
+
+    function getChatRouteInfo() {
+        const path = window.location.pathname;
+        const cidMatch = path.match(/\/c\/([a-f0-9\-]{36})/);
+        const isChat = Boolean(cidMatch || path.startsWith('/c/') || path.includes('/c/'));
+        const pMatch = path.match(/\/g\/(g-p-[^\/]+)/);
+        const isProjectChat = isChat && Boolean(pMatch);
+        const projectSlug = pMatch ? pMatch[1] : null;
+        const projectUrl = projectSlug ? `/g/${projectSlug}` : '/';
+        const currentChatId = cidMatch ? cidMatch[1] : (path.includes('/c/') ? path.split('/c/')[1].split('/')[0].split('?')[0] : null);
+
+        let isArchived = false;
+        if (isChat && currentChatId) {
+            if (typeof window.__archivedChatMap[currentChatId] === 'boolean') {
+                isArchived = window.__archivedChatMap[currentChatId];
+            } else {
+                // If not yet verified for THIS chat, default to false so active chats NEVER falsely show the banner!
+                isArchived = false;
+            }
+        }
+
+        return {
+            isChat,
+            currentChatId,
+            isProjectChat,
+            projectSlug,
+            projectUrl,
+            isArchived
+        };
+    }
+
+    // Check fetch responses for X-Chat-Archived header (Exclusive 4 Live Detection)
+    const origFetch = window.fetch;
+    window.fetch = async function(...args) {
+        const resp = await origFetch.apply(this, args);
+        try {
+            const url = args[0] && typeof args[0] === 'string' ? args[0] : (args[0] && args[0].url ? args[0].url : '');
+            const cidMatch = url.match(/\/backend-api\/conversations?\/([a-f0-9\-]{36})/);
+            if (cidMatch && !url.includes('/init') && !url.includes('/stream_status') && !url.includes('/textdocs')) {
+                const chatId = cidMatch[1];
+                const isArchived = (resp.headers.get('x-chat-archived') === 'true');
+                if (isArchived) {
+                    window.__archivedChatMap[chatId] = true;
+                }
+                
+                const curRoute = getChatRouteInfo();
+                if (curRoute.isChat && curRoute.currentChatId === chatId) {
+                    window.__isCurrentChatArchived = Boolean(window.__archivedChatMap[chatId]);
+                    setTimeout(applyArchivedBannerState, 20);
+                } else if (!curRoute.isChat) {
+                    window.__isCurrentChatArchived = false;
+                }
+            }
+
+            // Live 404 detection on POST conversation (Exclusive 4)
+            if (url.includes('/backend-api/conversation') && (resp.headers.get('x-chat-archived') === 'true' || resp.status === 404)) {
+                const curRoute = getChatRouteInfo();
+                if (curRoute.currentChatId) {
+                    window.__archivedChatMap[curRoute.currentChatId] = true;
+                }
+                window.__isCurrentChatArchived = true;
+                setTimeout(applyArchivedBannerState, 200);
+            }
+        } catch(e){}
+        return resp;
+    };
+
+    // Live DOM observer to detect limit message in chat stream
+    try {
+        const limitObserver = new MutationObserver(() => {
+            const curRoute = getChatRouteInfo();
+            if (curRoute.isChat && !window.__isCurrentChatArchived) {
+                const bodyText = document.body ? (document.body.innerText || '') : '';
+                if (bodyText.includes('Message limit reached') || bodyText.includes('This conversation is archived')) {
+                    if (curRoute.currentChatId) {
+                        window.__archivedChatMap[curRoute.currentChatId] = true;
+                    }
+                    window.__isCurrentChatArchived = true;
+                    applyArchivedBannerState();
+                }
+            }
+        });
+        limitObserver.observe(document.documentElement || document.body, { childList: true, subtree: true });
+    } catch(e){}
+
+    function applyArchivedBannerState() {
+        const routeInfo = getChatRouteInfo();
+        const isArchived = routeInfo.isArchived;
+
+        const composerForm = document.querySelector('form[data-composer-placement="thread"]') 
+            || document.querySelector('main form') 
+            || (document.getElementById('prompt-textarea') ? document.getElementById('prompt-textarea').closest('form') : document.querySelector('form:has(#prompt-textarea)'));
+        
+        const promptBox = document.getElementById('prompt-textarea');
+        const promptContainer = promptBox ? (promptBox.closest('form') || promptBox.closest('[data-composer-placement="thread"]')) : null;
+
+        let existingBanner = document.getElementById('tn-archived-banner');
+
+        if (isArchived) {
+            // Hide normal composer
+            if (composerForm) {
+                composerForm.style.setProperty('display', 'none', 'important');
+            }
+            if (promptContainer) {
+                promptContainer.style.setProperty('display', 'none', 'important');
+            }
+
+            const targetBannerType = routeInfo.isProjectChat ? 'project' : 'general';
+
+            if (existingBanner && existingBanner.getAttribute('data-banner-type') !== targetBannerType) {
+                existingBanner.remove();
+                existingBanner = null;
+            }
+
+            // Create or show banner
+            if (!existingBanner) {
+                const banner = document.createElement('div');
+                banner.id = 'tn-archived-banner';
+                banner.className = 'tn-archived-banner';
+                banner.setAttribute('data-banner-type', targetBannerType);
+
+                const titleText = routeInfo.isProjectChat 
+                    ? 'Message limit reached. Please start a new project chat.'
+                    : 'Message limit reached. Please start a New Chat.';
+                const descText = routeInfo.isProjectChat
+                    ? 'You can export this chat as JSON and upload it in your new project chat session for better answer.'
+                    : 'You can export this chat as JSON and upload it in your new chat session for better answer.';
+                const btnText = routeInfo.isProjectChat ? 'Start New Project' : 'New Chat';
+                const redirectUrl = routeInfo.isProjectChat ? routeInfo.projectUrl : '/';
+
+                banner.innerHTML = `
+                    <div class="tn-banner-left">
+                        <div class="tn-banner-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="tn-banner-text-wrap">
+                            <div class="tn-banner-title">${titleText}</div>
+                            <div class="tn-banner-desc">${descText}</div>
+                        </div>
+                    </div>
+                    <button class="tn-banner-new-btn" onclick="window.location.href='${redirectUrl}'">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                        ${btnText}
+                    </button>
+                `;
+                if (composerForm && composerForm.parentNode) {
+                    composerForm.parentNode.insertBefore(banner, composerForm);
+                } else if (promptContainer && promptContainer.parentNode) {
+                    promptContainer.parentNode.insertBefore(banner, promptContainer);
+                } else {
+                    const main = document.querySelector('main');
+                    if (main) main.appendChild(banner);
+                }
+            } else {
+                existingBanner.style.setProperty('display', 'flex', 'important');
+            }
+        } else {
+            // Restore composer
+            if (composerForm) {
+                composerForm.style.removeProperty('display');
+            }
+            if (promptContainer) {
+                promptContainer.style.removeProperty('display');
+            }
+            if (existingBanner) {
+                existingBanner.remove();
+            }
+        }
+    }
+
+    window.applyArchivedBannerState = applyArchivedBannerState;
+    setInterval(applyArchivedBannerState, 300);
+
+    // Watch navigation (SPA history & popstate)
+    function handleNavigation() {
+        const routeInfo = getChatRouteInfo();
+        if (!routeInfo.isChat) {
+            window.__isCurrentChatArchived = false;
+        } else if (routeInfo.currentChatId) {
+            if (typeof window.__archivedChatMap[routeInfo.currentChatId] === 'boolean') {
+                window.__isCurrentChatArchived = window.__archivedChatMap[routeInfo.currentChatId];
+            } else {
+                window.__isCurrentChatArchived = false;
+                // Proactively verify with our backend (<2ms from SQLite) in case React cached the view without a network fetch
+                origFetch('/backend-api/conversation/' + routeInfo.currentChatId)
+                    .then(resp => {
+                        const isArch = (resp.headers.get('x-chat-archived') === 'true');
+                        window.__archivedChatMap[routeInfo.currentChatId] = isArch;
+                        const cur = getChatRouteInfo();
+                        if (cur.isChat && cur.currentChatId === routeInfo.currentChatId) {
+                            window.__isCurrentChatArchived = isArch;
+                            applyArchivedBannerState();
+                        }
+                    })
+                    .catch(()=>{});
+            }
+        }
+        applyArchivedBannerState();
+    }
+
+    const origPushState = history.pushState;
+    history.pushState = function(...args) {
+        origPushState.apply(this, args);
+        handleNavigation();
+    };
+
+    const origReplaceState = history.replaceState;
+    history.replaceState = function(...args) {
+        origReplaceState.apply(this, args);
+        handleNavigation();
+    };
+
+    window.addEventListener('popstate', () => {
+        handleNavigation();
+    });
+})();
+</script></body>
+</html>
